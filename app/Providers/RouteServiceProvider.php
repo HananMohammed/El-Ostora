@@ -63,13 +63,13 @@ class RouteServiceProvider extends ServiceProvider
                 ->namespace($this->frontNamespace)
                 ->group(base_path('routes/Front/front.php'));
 
-            Route::middleware(['web'])
+            Route::middleware(['web','localeSessionRedirect', 'localizationRedirect', 'localeViewPath' ])
+                ->prefix(LaravelLocalization::setLocale())
                 ->name('auth.')
                 ->namespace($this->authNamespace)
                 ->group(base_path('routes/Auth/auth.php'));
         });
     }
-
     /**
      * Configure the rate limiters for the application.
      *

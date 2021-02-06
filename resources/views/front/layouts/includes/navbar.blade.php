@@ -40,7 +40,7 @@
                     </form>
                 </li>
             </ul>
-            <!--//right-->
+            <!--//right Login -->
             <div class="overlay-login text-left">
                 <button type="button" class="overlay-close1">
                     <i class="fa fa-times" aria-hidden="true"></i>
@@ -74,24 +74,33 @@
                                 </div>
                             </div>
                             <button type="submit" class="submit-login btn mb-4">@lang('front.sign')</button>
-
                         </form>
+                        <p class="login-texthny mb-2" style="font-size: 12px;">@lang('front.new-account')</p>
+                        <button  class="submit-login btn mb-4 register-close" >@lang('front.register')</button>
+
                         <!--//login-form-->
                     </div>
                     <!---->
                 </div>
             </div>
-            <!--//Register-->
-            <div class="overlay-login1 text-left">
-                <button type="button" class="overlay-close1">
+            <!--//Right Register -->
+            <div class="overlay-login1 text-left" style="display: none;">
+                <button type="button" class="overlay-close2">
                     <i class="fa fa-times" aria-hidden="true"></i>
                 </button>
                 <div class="wrap">
-                    <h5 class="text-center mb-4">@lang('front.login')</h5>
+                    <h5 class="text-center mb-4">@lang('front.register')</h5>
                     <div class="login-bghny p-md-5 p-4 mx-auto mw-100">
                         <!--/login-form-->
-                        <form action="" method="post">
+                        <form action="{{route('auth.register')}}" method="post">
                             @csrf
+                            <div class="form-group">
+                                <p class="login-texthny mb-2">@lang('front.username')</p>
+                                <input type="text" class="form-control" name="name" id="exampleInputName" aria-describedby="nameHelp" placeholder="Enter Your Username" required="required">
+                                @if($errors->has('name'))
+                                    <div class="error">{{ $errors->first('name') }}</div>
+                                @endif
+                            </div>
                             <div class="form-group">
                                 <p class="login-texthny mb-2">@lang('front.email')</p>
                                 <input type="email" class="form-control" name="email" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Your Email" required="required">
@@ -110,27 +119,19 @@
                             <div class="form-check mb-2">
                                 <div class="userhny-check">
                                     <label class="check-remember container">
-                                        <input type="checkbox" class="form-check">
-                                        <span class="checkmark"></span>
+                                        <input type="checkbox" class="form-check"> <span class="checkmark"></span>
                                         <p class="privacy-policy"></p>
                                     </label>
                                     <div class="clearfix"></div>
                                 </div>
                             </div>
 
-                            <li class="button-log1 usernhy">
-                                <a class="btn-open1" href="javascript:void(0)">
-                                    <span class="fa fa-user" aria-hidden="true"></span>
-                                </a>
-                            </li>
-
+                            <button type="submit" class="submit-login btn mb-4">@lang('front.register')</button>
                         </form>
-                        <!--//login-form-->
                     </div>
                     <!---->
                 </div>
             </div>
-
         </div>
     </div>
     <!--/nav-->

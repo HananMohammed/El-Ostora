@@ -5,34 +5,35 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Models\User;
 use Illuminate\Http\Request;
+use function Sodium\compare;
 
 class RegisterController extends Controller
 {
     public function store(Request $request)
     {
-        $input = $request->all();
-
-        $this->validate($request, [
-            'name' => 'required',
-            'email' => 'required|email',
+        $validated = $request->validate([
+            'name' => 'required|string|max:255',
+            'email' => 'required|unique:users,email|email',
             'password' => 'required'
         ]);
-
-        $user = User::create(request(['name', 'email', 'password']));
-        dd(auth()->login($user));
-
-//        auth()->login($user);
-        if(auth()->attempt(array('email' => $input['email'], 'password' => $input['password'])))
+        $user = User::create([
+            "name" => $validated["name"],
+            "email" => $validated["email"],
+            "password" => bcrypt( $validated["password"] )
+        ]);
+        auth()->login($user);
+        if($user)
         {
-            if (auth()->user()->is_admin == 1) {
+            if ($user->is_admin == 1) {
                 return redirect()->route('admin.adminPanel');
             }else{
                 return redirect()->route('front.homepage');
             }
-        }else{
-            $error = 'Email-Address Or Password Are Wrong.';
-            return view('front.index', compact('error'));
         }
-        return redirect()->to('/games');
+        if ($validated->fails()) {
+            // Retrieve errors message bag
+            $errors = $validated->errors();
+            return redirect(route('front.homepage'),compact('errors'));
+        }
     }
 }

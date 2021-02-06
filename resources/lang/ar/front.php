@@ -108,6 +108,8 @@ return[
     "stora" => "سطوره",
     "search" => "ابحث هنا",
     "products" =>"منتجاتنا",
+    "new-account" => " ...انشاء حساب جديد",
+    "username" => "الاسم",
 
 
 

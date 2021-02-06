@@ -12,4 +12,4 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::post("login", "LoginController@login")->name('login');
-Route::post('register', 'RegisterController@store');
+Route::post('register', 'RegisterController@store')->name('register');

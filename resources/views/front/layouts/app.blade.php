@@ -9,7 +9,7 @@
     <meta name="MobileOptimized" content="320" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>El-Ostora|@yield('title')</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">    <!-- Template CSS -->
+{{--    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">    <!-- Template CSS -->--}}
     <link rel="stylesheet" href="{{asset_public('front/assets/css/style-starter.css')}}">
     <link rel="stylesheet" href="{{asset_public('front/assets/css/style.css')}}">
     <!-- Template CSS -->
@@ -87,7 +87,7 @@
     //Login
     $(document).ready(function () {
         $(".button-log a").click(function () {
-            $(".overlay-login").fadeToggle(200);
+            $(".overlay-login").fadeToggle();
             $(this).toggleClass('btn-open').toggleClass('btn-close');
         });
     });
@@ -97,15 +97,19 @@
         open = false;
     });
     //Register
-    $(document).ready(function () {
-        $(".button-log1 a").click(function () {
-            $(".overlay-login1").fadeToggle(200);
-            $(this).toggleClass('btn-open1').toggleClass('btn-close');
-        });
-    });
-    $('.overlay-close1').on('click', function () {
+    // $(document).ready(function () {
+    //     $(".button-log1 a").click(function () {
+    //         $(".overlay-login1").fadeToggle(200);
+    //         $(this).toggleClass('btn-open1').toggleClass('btn-close');
+    //     });
+    // });
+    $('.register-close').on('click', function () {
+        $(".overlay-login").fadeToggle(200);
         $(".overlay-login1").fadeToggle(200);
-        $(".button-log1 a").toggleClass('btn-open1').toggleClass('btn-close');
+    });
+    $('.overlay-close2').on('click', function () {
+        $(".overlay-login1").fadeToggle(200);
+        $(".button-log a").toggleClass('btn-open').toggleClass('btn-close');
         open = false;
     });
 </script>

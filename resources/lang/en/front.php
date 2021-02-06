@@ -107,6 +107,8 @@ return[
     "stora" => "stora",
     "search" => "Search here",
     "products" =>"Our Products",
+    "new-account" => "if you don't have Account register ...",
+    "username" => "User Name",
 
 
 
