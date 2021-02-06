@@ -76,6 +76,21 @@ return [
     "message" => "الرساله",
     "username" => "الاسم",
     "newsLetter"=> "المتابعات",
+    "categories" => "الاقسام",
+    "list-categories" => "عرض الاقسام",
+    "create-category" => "انشاء اقسام",
+    "products" => "المنتجات",
+    "list-products" => "عرض المنتجات",
+    "create-product" => "انشاء منتج ",
+    "price" => "سعر المنتج",
+    "offer" =>"السعر بعد الخصم",
+    "enter-price" => "ادخل سعر المنتج",
+    "enter-offer" => "ادخل السعر بعد الخصم",
+    "edit-product" => "تعديل المنتج",
+    "mens-offer-edit" => "تعديل عروض الرجال",
+    "mens-offers" => " عروض الرجال",
+    "women-offers" => "عروض النساء",
+    "women-offer-edit" => "تعديل عروض النساء"
 
 
 

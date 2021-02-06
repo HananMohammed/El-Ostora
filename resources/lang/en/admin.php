@@ -83,6 +83,24 @@ return [
     "message" => "Message",
     "username" => "Username",
     "newsLetter"=> "Followers",
+    "categories" => "Categories",
+    "list-categories" => "List Categories",
+    "create-category" => "Create Category",
+    "products" => "Products",
+    "list-products" => "List Products",
+    "create-product" => "Create Product",
+    "price" => "Price",
+    "offer" =>"Offer",
+    "enter-price" => "Enter Product Price",
+    "enter-offer" => "Enter Product price after Offer",
+    "edit-product" => "Edit Product",
+    "mens-offer-edit" => "Edit Mens Offer",
+    "mens-offers" => "Mens Offer",
+    "women-offers" => "Women Offers",
+    "women-offer-edit" => "Edit Women Offer"
+
+
+
 
 
 

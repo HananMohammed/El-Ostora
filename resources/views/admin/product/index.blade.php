@@ -1,6 +1,6 @@
 @extends('admin.layouts.app')
 
-@section('title', 'Sliders')
+@section('title', 'Products')
 
 @section('content')
     <!--begin::Subheader-->
@@ -11,7 +11,7 @@
                 <!--begin::Page Heading-->
                 <div class="d-flex align-items-baseline flex-wrap mr-5">
                     <!--begin::Page Title-->
-                    <h5 class="text-dark font-weight-bold my-1 mr-5">@lang('slider.sliders')</h5>
+                    <h5 class="text-dark font-weight-bold my-1 mr-5">@lang('admin.products')</h5>
                     <!--end::Page Title-->
                     <!--begin::Breadcrumb-->
                     <ul class="breadcrumb breadcrumb-transparent breadcrumb-dot font-weight-bold p-0 my-2 font-size-sm">
@@ -19,7 +19,7 @@
                             <a href="{{route('admin.adminPanel')}}" class="text-muted">@lang('admin.adminPanel')</a>
                         </li>
                         <li class="breadcrumb-item">
-                            <a href="{{route('admin.sliders.index')}}" class="text-muted">@lang('slider.sliders')</a>
+                            <a href="{{route('admin.products.index')}}" class="text-muted">@lang('admin.products')</a>
                         </li>
                     </ul>
                     <!--end::Breadcrumb-->
@@ -38,11 +38,11 @@
             <div class="card card-custom gutter-b" style="width: 100%;">
                 <div class="card-header flex-wrap py-3">
                     <div class="card-title">
-                        <h3 class="card-label">@lang('slider.sliders')</h3>
+                        <h3 class="card-label">@lang('admin.products')</h3>
                     </div>
                     <div class="card-toolbar">
                         <!--begin::Button-->
-                        <a href="{{ route('admin.sliders.create') }}" class="btn btn-primary font-weight-bolder d-flex">
+                        <a href="{{ route('admin.products.create') }}" class="btn btn-primary font-weight-bolder d-flex">
                     <span class="svg-icon svg-icon-md">
                         <!--begin::Svg Icon | path:assets/media/svg/icons/Design/Flatten.svg-->
                         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
@@ -66,23 +66,25 @@
                                     <thead>
                                     <tr role="row">
                                         <th>@lang('dashboard.id')</th>
-                                        <th>@lang('slider.slide-image')</th>
+                                        <th>@lang('admin.image')</th>
                                         <th>@lang('admin.title')</th>
-                                        <th>@lang('admin.description')</th>
+                                        <th>@lang('admin.price')</th>
+                                        <th>@lang('admin.offer')</th>
                                         <th>@lang('admin.created_by')</th>
                                         <th>@lang('admin.actions')</th>
                                     </tr>
                                     </thead>
-                                    @if(count($sliders)>0)
+                                    @if(count($products)>0)
                                         <tbody>
-                                        @foreach($sliders as $slider)
+                                        @foreach($products as $product)
                                             <tr>
-                                                <td>{{$slider->id}}</td>
-                                                <td><img src="{{asset_public('storage/uploads/'.$slider->image)}}" style="width: 100px;height: 60px;"></td>
-                                                <td>{{$slider->title}}</td>
-                                                <td>{!! $slider->text !!}</td>
-                                                <td>{{$slider->user()->pluck('name')[0]}}</td>
-                                                <td nowrap="nowrap">{{ $slider->id }}</td>
+                                                <td>{{$product->id}}</td>
+                                                <td><img src="{{asset_public('storage/uploads/'.$product->image)}}" style="width: 100px;height: 60px;"></td>
+                                                <td>{{$product->title}}</td>
+                                                <td>{{$product->price}}</td>
+                                                <td>{{$product->offer}}</td>
+                                                <td>{{$product->user()->pluck('name')[0]}}</td>
+                                                <td nowrap="nowrap">{{ $product->id }}</td>
                                             </tr>
                                         @endforeach
                                         </tbody>
@@ -168,7 +170,7 @@
                 </span>
             </a>
 
-            <a href="${currentLocation}/sliders/${data}"class="btn btn-sm btn-clean btn-icon" title="Delete" onclick="event.preventDefault();
+            <a href="${currentLocation}/products/${data}"class="btn btn-sm btn-clean btn-icon" title="Delete" onclick="event.preventDefault();
                         document.getElementById('delete-operator-form-${data}').submit();">
                 <span class="svg-icon svg-icon-md">
                     <svg class="delete" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
