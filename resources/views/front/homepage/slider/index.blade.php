@@ -14,57 +14,22 @@
                         <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
                     </ol>
                     <div class="carousel-inner">
-                        <div class="carousel-item">
-                            <div class="container" dir="ltr" style="direction:ltr;">
-                                <div class="carousel-caption">
-                                    <h3>Women's
-                                        Fashion
-                                        <br>50% Off</h3>
-                                    <a href="#" class="shop-button btn">
-                                        Shop Now
-                                    </a>
+                        @foreach($data["slider"] as $slider)
+                            <div class="carousel-item
+                                        @if($loop->index > 0) {{'item'. ($loop->index+1) }} @endif
+                                        @if($loop->index == 2) active @endif
+                                " style="background-image: url({{asset_public('storage/uploads/'.$slider->image)}})">
+                                <div class="container" dir="ltr" style="direction:ltr;">
+                                    <div class="carousel-caption" >
+                                        {!! $slider->text !!}
+                                        <a href="#" class="shop-button btn">
+                                            @lang('front.shop-now')
+                                        </a>
 
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="carousel-item item2">
-                            <div class="container">
-                                <div class="carousel-caption">
-                                    <h3>Men's
-                                        Fashion
-                                        <br>60% Off</h3>
-                                    <a href="#" class="shop-button btn">
-                                        Shop Now
-                                    </a>
-
-                                </div>
-                            </div>
-                        </div>
-                        <div class="carousel-item item3 active">
-                            <div class="container">
-                                <div class="carousel-caption">
-                                    <h3>Women's
-                                        Fashion
-                                        <br>50% Off</h3>
-                                    <a href="#" class="shop-button btn">
-                                        Shop Now
-                                    </a>
-
-                                </div>
-                            </div>
-                        </div>
-                        <div class="carousel-item item4">
-                            <div class="container">
-                                <div class="carousel-caption">
-                                    <h3>Men's
-                                        Fashion
-                                        <br>60% Off</h3>
-                                    <a href="#" class="shop-button btn">
-                                        Shop Now
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
+                        @endforeach
                     </div>
                     <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
                         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -81,9 +46,8 @@
             <div class="right-banner">
                 <div class="right-1">
                     <h4>
-                    Men's
-                    Fashion
-                    <br>50% Off</h4>
+                    @lang('front.mens-offer')
+                    <br>@lang('front.offer50')</h4>
                 </div>
             </div>
 

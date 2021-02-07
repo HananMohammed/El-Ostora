@@ -23,6 +23,8 @@
     @yield('style')
     @if(app()->getLocale()=='ar')
     <!-- Latest compiled and minified CSS -->
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@700&display=swap" rel="stylesheet">
         <link
             rel="stylesheet"
             href="{{asset_public('front/assets/css/style_rtl.css')}}" />

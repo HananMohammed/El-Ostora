@@ -6,6 +6,7 @@ namespace App\Traits;
 
 use App\Models\Admin\About;
 use App\Models\Admin\Advantage;
+use App\Models\Admin\Category;
 use App\Models\Admin\Course;
 use App\Models\Admin\Department;
 use App\Models\Admin\HowWork;
@@ -24,11 +25,12 @@ class ViewData
         $slider = Slider::select('title','text','image')->get();
         $about = About::first();
         $news = News::all();
-
+        $categories = Category::all();
         $data = [
             "slider" => $slider,
             "about" => $about,
             "news" => $news,
+            "categories" => $categories
          ];
         return $data ;
     }

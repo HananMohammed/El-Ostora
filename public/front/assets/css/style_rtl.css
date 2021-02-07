@@ -1,3 +1,6 @@
+body{
+    font-family: 'Tajawal', sans-serif;
+}
 .navbar-nav {
     position: relative;
     left: -65%;
@@ -16,4 +19,12 @@
     right: 60%;
     top: -65px;
 }
-
+.w3l-banner-slider-main .carousel-caption h3 {
+    position: relative;
+    left: 55%;
+    top: -10px;
+}
+.w3l-banner-slider-main a.shop-button.btn {
+    position: relative;
+    left: 65%;
+}

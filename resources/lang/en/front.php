@@ -109,6 +109,10 @@ return[
     "products" =>"Our Products",
     "new-account" => "if you don't have Account register ...",
     "username" => "User Name",
+    "mens-offer" => "MEN'S FASHION",
+    "offer50" => "50% Off",
+    "shop-now" => "Shop Now",
+
 
 
 

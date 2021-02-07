@@ -13,3 +13,10 @@ use Illuminate\Support\Facades\Route;
 
 Route::post("login", "LoginController@login")->name('login');
 Route::post('register', 'RegisterController@store')->name('register');
+Route::get('/register', function () {
+    abort('404');
+});
+Route::get('/login', function () {
+    abort('404');
+});
+
