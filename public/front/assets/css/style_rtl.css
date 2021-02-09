@@ -1,4 +1,4 @@
-body{
+a, p, h3, h4, span{
     font-family: 'Tajawal', sans-serif;
 }
 .navbar-nav {
@@ -27,4 +27,23 @@ body{
 .w3l-banner-slider-main a.shop-button.btn {
     position: relative;
     left: 65%;
+}
+a.read-more.btn {
+    float: right;
+}
+.content-info-in .content-gd{
+    position: relative;
+    right: 28%;
+}
+h3.hny-title, h3.hny-title.two {
+    position: relative;
+    left: 38%;
+}
+a.read-more.btn {
+    position: relative;
+    right: 40%;
+}
+.w3l-footer-22 .text-txt h3 {
+    position: relative;
+    left: 70%;
 }

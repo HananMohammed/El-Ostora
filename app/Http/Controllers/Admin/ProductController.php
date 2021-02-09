@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Requests\Admin\ProductRequest;
+use App\Models\Admin\Category;
 use App\Models\Admin\Product;
 use App\Http\Controllers\Controller;
 use App\Traits\ImageProcess;
@@ -33,7 +34,9 @@ class ProductController extends Controller
     {
         $product = new Product();
 
-        return view('admin.product.create', compact('product'));
+        $categories = Category::all();
+
+        return view('admin.product.create', compact('product', 'categories'));
     }
 
     /**
@@ -58,7 +61,9 @@ class ProductController extends Controller
      */
     public function edit(Product $product)
     {
-        return view('admin.product.edit', compact('product'));
+        $categories = Category::all();
+
+        return view('admin.product.edit', compact('product', 'categories'));
 
     }
 

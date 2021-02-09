@@ -4,62 +4,52 @@
         <div class="container py-lg-5">
             <div class="text-txt row">
                 <div class="left-side col-lg-4">
-                    <h3><a class="logo-footer" href="index.html">
-                            Spry<span class="lohny">S</span>tore</a></h3>
-                    <!-- if logo is image enable this
-                                  <a class="navbar-brand" href="#index.html">
-                                      <img src="image-path" alt="Your logo" title="Your logo" style="height:35px;" />
-                                  </a> -->
-                    <p>Lorem ipsum dolor sit amet,Ea consequuntur illum facere aperiam sequi optio consectetur.Vivamus
-                        a ligula quam. Ut blandit eu leo non suscipit. </p>
+                    <h3><a class="logo-footer" href="{{route('front.homepage')}}">
+                            <span class="lohny">@lang('front.o')</span>@lang('front.stora')</a></h3>
+                    <p>@lang('front.loreom')</p>
                     <ul class="social-footerhny mt-lg-5 mt-4">
 
-                        <li><a class="facebook" href="#"><span class="fa fa-facebook" aria-hidden="true"></span></a>
+                        <li><a class="facebook" target="_blank" href="https://www.facebook.com/Ostora-1520814358225033/?fref=ts"><span class="" aria-hidden="true"><i class="fab fa-facebook-f"></i></span></a>
                         </li>
-                        <li><a class="twitter" href="#"><span class="fa fa-twitter" aria-hidden="true"></span></a>
+                        <li><a class="twitter"  target="_blank" href="http://www.twitter.com"><span class="" aria-hidden="true"><i class="fab fa-twitter"></i></span></a>
                         </li>
-                        <li><a class="google" href="#"><span class="fa fa-google-plus" aria-hidden="true"></span></a>
+                        <li><a class="google" href="http://www.google.com"><span class="" aria-hidden="true"><i class="fab fa-google-plus-g"></i></span></a>
                         </li>
-                        <li><a class="instagram" href="#"><span class="fa fa-instagram" aria-hidden="true"></span></a>
+                        <li><a class="instagram" href="http://www.instgram.com"><span class="" aria-hidden="true"><i class="fab fa-instagram"></i></span></a>
                         </li>
                     </ul>
                 </div>
 
                 <div class="right-side col-lg-8 pl-lg-5">
-                    <h4>Women's Day Special Offer
-                        All Branded Sandals are Flat 50% Discount</h4>
+                    <h4>@lang('front.footer-text')</h4>
                     <div class="sub-columns">
                         <div class="sub-one-left">
-                            <h6>Useful Links</h6>
+                            <h6>@lang('front.links')</h6>
                             <div class="footer-hny-ul">
                                 <ul>
-                                    <li><a href="index.html">Home</a></li>
-                                    <li><a href="about.html">About</a></li>
-                                    <li><a href="#">Blog</a></li>
-                                    <li><a href="contact.html">Contact</a></li>
+                                    <li><a href="index.html">@lang('front.homepage')</a></li>
+                                    <li><a href="about.html">@lang('front.about')</a></li>
                                 </ul>
                                 <ul>
-                                    <li><a href="#">Careers</a></li>
-                                    <li><a href="#">Privacy Policy</a></li>
-                                    <li><a href="#">Terms and Conditions</a></li>
-                                    <li><a href="contact.html">Support</a></li>
+                                    <li><a href="#">@lang('front.contact')</a></li>
+                                    <li><a href="contact.html">@lang('front.products')</a></li>
                                 </ul>
                             </div>
 
                         </div>
                         <div class="sub-two-right">
-                            <h6>Our Store</h6>
-                            <p class="mb-5">49436 Broaddus Honey Court Avenue, Madisonville KY 95020, United States of America</p>
+                            <h6>@lang('front.store')</h6>
+                            <p class="mb-5">@lang('front.shobra')</p>
 
-                            <h6>We accept:</h6>
+                            <h6.@lang('front.accept')</h6>
                             <ul>
-                                <li><a class="pay-method" href="#"><span class="fa fa-cc-visa" aria-hidden="true"></span></a>
+                                <li><a class="pay-method" href="javascript:void(0)"><span aria-hidden="true"><i class="fab fa-cc-visa"></i></span></a>
                                 </li>
-                                <li><a class="pay-method" href="#"><span class="fa fa-cc-mastercard" aria-hidden="true"></span></a>
+                                <li><a class="pay-method" href="javascript:void(0)"><span class="" aria-hidden="true"><i class="fab fa-cc-mastercard"></i></span></a>
                                 </li>
-                                <li><a class="pay-method" href="#"><span class="fa fa-cc-paypal" aria-hidden="true"></span></a>
+                                <li><a class="pay-method" href="javascript:void(0)"><span class="" aria-hidden="true"><i class="fab fa-cc-paypal"></i></span></a>
                                 </li>
-                                <li><a class="pay-method" href="#"><span class="fa fa-cc-amex" aria-hidden="true"></span></a>
+                                <li><a class="pay-method" href="javascript:void(0)"><span class="" aria-hidden="true"><i class="fab fa-cc-amex"></i></span></a>
                                 </li>
                             </ul>
                         </div>
@@ -67,16 +57,9 @@
                 </div>
             </div>
             <div class="below-section row">
-                <div class="columns col-lg-6">
-                    <ul class="jst-link">
-                        <li><a href="#">Privacy Policy </a> </li>
-                        <li><a href="#">Term of Service</a></li>
-                        <li><a href="contact.html">Customer Care</a> </li>
-                    </ul>
-                </div>
-                <div class="columns col-lg-6 text-lg-right">
-                    <p>© 2020 SpryStore. All rights reserved. Design by <a href="https://w3layouts.com/" target="_blank">
-                            W3Layouts</a>
+                <div class="columns col-lg-12 text-lg-center">
+                    <p>@if(app()->getLocale()=='en')©@endif 2021 OSTORA. All rights reserved. Developed by <a href="https://smart-eg.com/" target="_blank">
+                            Smart Group</a>@if(app()->getLocale()=='ar')©@endif
                     </p>
                 </div>
                 <button onclick="topFunction()" id="movetop" title="Go to top" style="display: block;">

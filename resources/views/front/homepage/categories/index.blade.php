@@ -4,8 +4,8 @@
     <div class="grids-hny-2-mian py-5">
         <div class="container py-lg-5">
 
-            <h3 class="hny-title mb-0 text-center">Shop With <span>Us</span></h3>
-            <p class="mb-4 text-center">Handpicked Favourites just for you</p>
+            <h3 class="hny-title mb-0 text-center">@lang('front.shop-with') <span>@lang('front.us')</span></h3>
+            <p class="mb-4 text-center">@lang('front.shop-with-us-text')</p>
             <div class="welcome-grids row mt-5">
                 @foreach($data["categories"] as $category)
                 <div class="col-lg-2 col-md-4 col-6 welcome-image">

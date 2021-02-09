@@ -6505,11 +6505,13 @@ iframe {
 
 .w3l-ecommerce-main .product-image2 .pic-1 {
   opacity: 1;
-  transition: all .5s;
+  transition: transform 0.2s;
+
 }
 
 .w3l-ecommerce-main .product-grid2:hover .product-image2 .pic-1 {
   opacity: 0;
+    transform: scale(1.5);
 }
 
 .w3l-ecommerce-main .product-image2 .pic-2 {
@@ -6519,12 +6521,13 @@ iframe {
   position: absolute;
   top: 0;
   left: 0;
-  transition: all .5s;
+    transition: transform 0.2s;
   background: #00000057;
 }
 
 .w3l-ecommerce-main .product-grid2:hover .product-image2 .pic-2 {
   opacity: 1;
+    transform: scale(1.5);
 }
 
 .w3l-ecommerce-main .product-grid2 .social {

@@ -3,4 +3,9 @@
 @section('content')
     @include('front.homepage.slider.index')
     @include('front.homepage.categories.index')
+    @include('front.homepage.mensOffer.index')
+    @include('front.homepage.womenOffer.index')
+    @include('front.homepage.products.index')
+    @include('front.homepage.blogs.index')
+    @include('front.homepage.news.index')
 @endsection

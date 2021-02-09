@@ -138,18 +138,14 @@
     <nav class="navbar navbar-expand-lg navbar-light">
         <div class="container-fluid serarc-fluid">
             <a class="navbar-brand" href="{{route('front.homepage')}}">
-                @lang('front.el')<span class="lohny">@lang('front.o')</span>@lang('front.stora')</a>
-            <!-- if logo is image enable this
-                    <a class="navbar-brand" href="#index.html">
-                        <img src="image-path" alt="Your logo" title="Your logo" style="height:35px;" />
-                    </a> -->
-            <!--/search-right-->
+               <span class="lohny">@lang('front.o')</span>@lang('front.stora')</a>
+
             <div class="search-right">
 
                 <a href="#search" title="search"><span class="fa fa-search mr-2" aria-hidden="true"></span>
                     <span class="search-text">@lang('front.search')</span></a>
                 <!-- search popup -->
-                <div id="search" class="pop-overlay">
+                <div id="search" class="pop-overlay" @if(app()->getLocale()=="ar")dir="ltr"@endif>
                     <div class="popup">
 
                         <form action="#" method="post" class="search-box">
@@ -169,10 +165,10 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item active">
-                        <a class="nav-link" href="index.html">@lang('front.homepage')</a>
+                        <a class="nav-link" href="{{route('front.homepage')}}">@lang('front.homepage')</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="about.html">@lang('front.about')</a>
+                        <a class="nav-link" href="{{route('front.about')}}">@lang('front.about')</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="about.html">@lang('front.products')</a>

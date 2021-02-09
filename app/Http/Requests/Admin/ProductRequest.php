@@ -30,6 +30,7 @@ class ProductRequest extends FormRequest
             "text.*" => "required|string",
             "price" => "required|integer",
             "offer" => "nullable|integer",
+            "category" => "required|integer",
             'image' => !in_array($this->method() ,["PUT" ,"PATCH"]) ? "required" : "",
             'image.*' => 'image|mimes:jpeg,png,jpg,gif,svg|max:10000'
         ];
@@ -54,6 +55,8 @@ class ProductRequest extends FormRequest
             'text.1.string' => 'The title-ar field must be of type string.',
             "price.integer" => "The Price Field Should be integer value",
             "offer.integer" => "The Price after Offer Field Should be integer value",
+            "category.integer" => "The category Field Should be integer value",
+            "category.required" => "The category Field is required.",
             'image' => "image Field is Required",
             "image.mimes" => "Image Should be of type jpeg,png,jpg,gif,svg",
             "image.max" => "Image max length is 10000"

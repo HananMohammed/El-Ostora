@@ -20,6 +20,7 @@ class CreateProductsTable extends Migration
             $table->integer('price');
             $table->integer('offer')->nullable();
             $table->text('image')->nullable();
+            $table->integer('category');
             $table->tinyInteger('created_by');
             $table->timestamps();
         });

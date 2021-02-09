@@ -104,7 +104,7 @@ return[
     "sign" =>"Sign In",
     "el"=>"El-",
     "o" => "O",
-    "stora" => "stora",
+    "stora" => "STORA",
     "search" => "Search here",
     "products" =>"Our Products",
     "new-account" => "if you don't have Account register ...",
@@ -112,6 +112,42 @@ return[
     "mens-offer" => "MEN'S FASHION",
     "offer50" => "50% Off",
     "shop-now" => "Shop Now",
+    "shop-with" => "SHOP WITH ",
+    "us" => "US",
+    "shop-with-us-text" => "A legend is now resplendent with shows",
+    "shop-with-us-product" => "A legend is now resplendent with products",
+    "lot" => "A lot of Products & Options to",
+    "change" =>"change",
+    "each" => "Each design in Collection A Legend has its own character, but it is definitely different and of high quality
+New from legend for the winter season in more than one color",
+    "latest-blog" => "Latest Blog",
+    "posts" =>"Posts",
+    "handpick" => "Handpicked Favourites just for you",
+    "customer" => "CUSTOMERS ",
+    "love" =>"LOVE",
+    "people" => "What People Say",
+    "loreom" =>"Lorem, ipsum dolor sit amet consectetur adipisicing elit. Labore rem, dicta assumenda mollitia molestias quas nihil quasis...",
+    "John-Lee" =>"John Lee",
+    "laura-sten" =>"Laura Sten",
+    "laura-grill" =>"Lora Grill",
+    "smith" =>"Smith Roy",
+    "Join" => "Join",
+    "join-us" => "Join us for FREE to get instant",
+    "subscribe" => "Subscribe and get notified at first on the latest update and offers!",
+    "email-update" =>"email updates!",
+    "email-here" => "Your email here",
+    "footer-text" => "Women's Day Special Offer All Branded Products are Flat 50% Discount",
+    "links" => "Useful Links",
+    "store" =>"OUR STORE",
+    "accept" =>"WE ACCEPT:",
+    "shobra" => "The beginning of Egypt Alexandria Agricultural Road - El Farnawany Station - Shubra El Khaima",
+    "what-we" => "What We",
+    "offer" => "Offer"
+
+
+
+
+
 
 
 

@@ -4,7 +4,7 @@ namespace App\Http\Requests\Admin;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class AboutRequest extends FormRequest
+class BlogRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -53,7 +53,6 @@ class AboutRequest extends FormRequest
             'image' => "image Field is Required",
             "image.mimes" => "Image Should be of type jpeg,png,jpg,gif,svg",
             "image.max" => "Image max length is 10000"
-
         ];
     }
 }

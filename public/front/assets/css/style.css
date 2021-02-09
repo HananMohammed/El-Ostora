@@ -21,3 +21,7 @@
 .w3l-grids-hny-2 .boxhny13 img {
     height: 120px;
 }
+.facebook, .twitter, .google, .instagram {
+    font-size: 20px;
+    padding-top: 4px;
+}

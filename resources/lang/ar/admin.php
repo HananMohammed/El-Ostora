@@ -4,6 +4,7 @@ return [
     'homepage' =>'الصفحه الرئيسيه',
     'adminPanel' =>'لوحه التحكم',
     'about' => 'عن الشركه',
+    "blogs" => "المقالات",
     'logout' => 'تسجيل الخروج',
     'submit'=>"حفظ",
     'close'=>"الغاء",
@@ -90,7 +91,12 @@ return [
     "mens-offer-edit" => "تعديل عروض الرجال",
     "mens-offers" => " عروض الرجال",
     "women-offers" => "عروض النساء",
-    "women-offer-edit" => "تعديل عروض النساء"
+    "women-offer-edit" => "تعديل عروض النساء",
+    "edit-category" => "تعديل الاقسام ",
+    "select-category" => "تحديد القسم",
+
+
+
 
 
 

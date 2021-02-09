@@ -1,6 +1,6 @@
 @extends('admin.layouts.app')
 
-@section('title', 'News')
+@section('title', 'Blogs')
 
 @section('content')
     <!--begin::Subheader-->
@@ -11,7 +11,7 @@
                 <!--begin::Page Heading-->
                 <div class="d-flex align-items-baseline flex-wrap mr-5">
                     <!--begin::Page Title-->
-                    <h5 class="text-dark font-weight-bold my-1 mr-5">@lang('admin.news')</h5>
+                    <h5 class="text-dark font-weight-bold my-1 mr-5">@lang('admin.blogs')</h5>
                     <!--end::Page Title-->
                     <!--begin::Breadcrumb-->
                     <ul class="breadcrumb breadcrumb-transparent breadcrumb-dot font-weight-bold p-0 my-2 font-size-sm">
@@ -19,7 +19,7 @@
                             <a href="{{route('admin.adminPanel')}}" class="text-muted">@lang('admin.adminPanel')</a>
                         </li>
                         <li class="breadcrumb-item">
-                            <a href="{{route('admin.lessons.index')}}" class="text-muted">@lang('admin.news')</a>
+                            <a href="{{route('admin.blogs.index')}}" class="text-muted">@lang('admin.blogs')</a>
                         </li>
                     </ul>
                     <!--end::Breadcrumb-->
@@ -30,8 +30,7 @@
         </div>
     </div>
     <!--end::Subheader-->
-    @include('admin.homepage.news.form_store')
-    @include('admin.homepage.news.form_edit')
+    @include('admin.homepage.blog.form_store')
     <!--begin::Entry-->
     <div class="d-flex flex-column-fluid mt-5" id="kt_content">
         <!--begin::Container-->
@@ -58,7 +57,7 @@
             <div class="card card-custom gutter-b" style="width: 100%;">
                 <div class="card-header flex-wrap py-3">
                     <div class="card-title">
-                        <h3 class="card-label">@lang('admin.news')</h3>
+                        <h3 class="card-label">@lang('admin.blogs')</h3>
                     </div>
                     <div class="card-toolbar">
                         <!--begin::Button-->
@@ -86,21 +85,23 @@
                                     <thead>
                                     <tr role="row">
                                         <th>@lang('dashboard.id')</th>
+                                        <th>@lang('admin.image')</th>
                                         <th>@lang('admin.title')</th>
-                                        <th>@lang('admin.text')</th>
+                                        <th>@lang('admin.description')</th>
                                         <th>@lang('admin.created_by')</th>
                                         <th>@lang('admin.actions')</th>
                                     </tr>
                                     </thead>
-                                    @if(count($news)>0)
+                                    @if(count($blogs)>0)
                                         <tbody>
-                                        @foreach($news as $new)
+                                        @foreach($blogs as $blog)
                                             <tr>
-                                                <td>{{$new->id}}</td>
-                                                <td>{{$new->title}}</td>
-                                                <td>{{$new->text}}</td>
-                                                <td>{{$new->user()->pluck('name')[0]}}</td>
-                                                <td nowrap="nowrap">{{ $new->id }}</td>
+                                                <td>{{$blog->id}}</td>
+                                                <td><img src="{{asset_public('storage/uploads/'.$blog->image)}}" style="width: 100px;height: 60px;"></td>
+                                                <td>{{$blog->title}}</td>
+                                                <td>{{$blog->text}}</td>
+                                                <td>{{$blog->user()->pluck('name')[0]}}</td>
+                                                <td nowrap="nowrap">{{ $blog->id }}</td>
                                             </tr>
                                         @endforeach
                                         </tbody>
@@ -234,19 +235,7 @@
                         render: function(data, type, full, meta) {
                             // href="`+currentLocation+`/${data}/edit"
                             return `
-                    <a href= "javascript:void(0)" class="btn btn-sm btn-clean btn-icon mr-2 lessonEdit" data-lesson="${data}" title="Edit details" id="lessonEdit" data-toggle="modal" data-target="#newsEdit">
-                    <span class="svg-icon svg-icon-md">
-                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
-                        <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                            <rect x="0" y="0" width="24" height="24"></rect>
-                            <path d="M8,17.9148182 L8,5.96685884 C8,5.56391781 8.16211443,5.17792052 8.44982609,4.89581508 L10.965708,2.42895648 C11.5426798,1.86322723 12.4640974,1.85620921 13.0496196,2.41308426 L15.5337377,4.77566479 C15.8314604,5.0588212 16,5.45170806 16,5.86258077 L16,17.9148182 C16,18.7432453 15.3284271,19.4148182 14.5,19.4148182 L9.5,19.4148182 C8.67157288,19.4148182 8,18.7432453 8,17.9148182 Z" fill="#000000" fill-rule="nonzero" transform="translate(12.000000, 10.707409) rotate(-135.000000) translate(-12.000000, -10.707409) "></path>
-                            <rect fill="#000000" opacity="0.3" x="5" y="20" width="15" height="2" rx="1"></rect>
-                        </g>
-                    </svg>
-                </span>
-            </a>
-
-            <a href="${currentLocation}/news/${data}"class="btn btn-sm btn-clean btn-icon" title="Delete" onclick="event.preventDefault();
+            <a href="${currentLocation}/blogs/${data}"class="btn btn-sm btn-clean btn-icon" title="Delete" onclick="event.preventDefault();
                         document.getElementById('delete-operator-form-${data}').submit();">
                 <span class="svg-icon svg-icon-md">
                     <svg class="delete" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
@@ -284,7 +273,30 @@
 
         });
     </script>
+    <script>
+        "use strict";
 
+        // Class definition
+        var KTContactsEdit = function () {
+            // Base elements
+            var avatar;
+
+            var initAvatar1 = function() {
+                avatar = new KTImageInput('kt_contacts_edit_avatar1');
+            }
+            return {
+                // public functions
+                init: function() {
+                    initAvatar1();
+                }
+            };
+        }();
+
+
+        jQuery(document).ready(function() {
+            KTContactsEdit.init();
+        });
+    </script>
     @if(session()->has('success'))
         <script>Swal.fire("Good Job", "{{session()->get('success')}}", "success");</script>
     @endif

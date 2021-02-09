@@ -107,7 +107,7 @@
                                 <i class="menu-bullet menu-bullet-line">
                                     <span></span>
                                 </i>
-                                <span class="menu-text">About</span>
+                                <span class="menu-text">@lang('admin.about')</span>
                             </a>
                         </li>
                         <!--End About Us-->
@@ -129,16 +129,16 @@
                                     <span class="menu-text">@lang('admin.women-offers')</span>
                                 </a>
                             </li>
-                        <!--News-->
+                        <!--Start Blogs-->
                             <li class="menu-item menu-item-submenu" aria-haspopup="true" data-menu-toggle="hover">
-                                <a href="{{route('admin.news.index')}}" class="menu-link menu-toggle">
+                                <a href="{{route('admin.blogs.index')}}" class="menu-link menu-toggle">
                                     <i class="menu-bullet menu-bullet-line">
                                         <span></span>
                                     </i>
-                                    <span class="menu-text">@lang('admin.news')</span>
+                                    <span class="menu-text">@lang('admin.blogs')</span>
                                 </a>
                             </li>
-                            <!--News-->
+                            <!--End Blogs-->
                         </ul>
                     </div>
                 </li>

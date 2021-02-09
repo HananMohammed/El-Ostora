@@ -97,7 +97,10 @@ return [
     "mens-offer-edit" => "Edit Mens Offer",
     "mens-offers" => "Mens Offer",
     "women-offers" => "Women Offers",
-    "women-offer-edit" => "Edit Women Offer"
+    "women-offer-edit" => "Edit Women Offer",
+    "edit-category" => "Edit Category",
+    "select-category" => "Select Category",
+    "blogs" => "Blogs",
 
 
 

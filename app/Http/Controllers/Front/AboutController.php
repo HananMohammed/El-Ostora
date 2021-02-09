@@ -11,9 +11,9 @@ class AboutController extends Controller
 {
     public function index()
     {
-        $news = News::orderBy('id', 'desc')->take(3)->get();
         $about = About::first();
-        return view('front.homepage.about.single_about.index', compact('news', 'about'));
+
+        return view('front.about.index', compact( 'about'));
     }
 
 }

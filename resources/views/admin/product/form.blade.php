@@ -40,6 +40,16 @@
                 </textarea>
             </div>
         </div>
+        <div class="col-lg-12 col-sm-12">
+            <div class="form-group">
+                <label for="category">@lang('admin.select-category')<label class="text-danger">*</label></label>
+                <select class="form-control" id="category"  name="category"  value="{{old('category')}}" >
+                   @foreach($categories as $category)
+                    <option value="{{$category->id}}">{{ $category->title }}</option>
+                    @endforeach
+                </select>
+            </div>
+        </div>
         <div class="col-lg-12 col-xl-12">
             <div class="image-input image-input-outline" id="kt_contacts_edit_avatar1" style="background-image:url({{asset_public('admin/media/gym_images/il_570xN.1580358345_5585.jpg')}}) ;width:300px;height: 220px;">
                 <div class="image-input-wrapper"  style="background-image:@if(!empty($product->toArray())) url({{asset_public('storage/uploads/'.$product->image)}}) @else url({{asset_public('admin/assets/media/photography.svg')}}) @endif; width:300px;height: 220px;"></div>

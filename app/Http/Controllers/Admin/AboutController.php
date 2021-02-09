@@ -5,11 +5,12 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\AboutRequest;
 use App\Models\Admin\About;
+use App\Traits\ImageProcess;
 use App\Traits\StoreUpdateTrait;
 
 class AboutController extends Controller
 {
-    use StoreUpdateTrait;
+    use ImageProcess, StoreUpdateTrait;
     /**
      * Show the form for editing the specified About.
      *
