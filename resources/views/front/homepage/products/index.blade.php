@@ -10,12 +10,12 @@
                 <div class="col-lg-3 col-6 product-incfhny mt-4">
                     <div class="product-grid2 transmitv">
                         <div class="product-image2">
-                            <a href="#">
+                            <a href="{{route('front.single-product',["id" => $product->id, "slug" => Str::slug($product->title, '-')])}}">
                                 <img class="pic-1 img-fluid" src="{{asset_public('storage/uploads/'.$product->image)}}">
                                 <img class="pic-2 img-fluid" src="{{asset_public('storage/uploads/'.$product->image)}}">
                             </a>
                             <ul class="social">
-                                <li><a href="#" data-tip="Quick View"><span class="fa fa-eye"></span></a></li>
+                                <li><a href="{{route('front.single-product',["id" => $product->id, "slug" => Str::slug($product->title, '-')])}}" data-tip="Quick View"><span class="fa fa-eye"></span></a></li>
 
                                 <li><a href="#" data-tip="Add to Cart"><span class="fa fa-shopping-bag"></span></a>
                                 </li>
@@ -27,13 +27,13 @@
                                     <input type="hidden" name="transmitv_item" value="Women Maroon Top">
                                     <input type="hidden" name="amount" value="899.99">
                                     <button type="submit" class="transmitv-cart ptransmitv-cart add-to-cart">
-                                        Add to Cart
+                                        @lang('front.cart')
                                     </button>
                                 </form>
                             </div>
                         </div>
                         <div class="product-content">
-                            <h3 class="title"><a href="#">{{ $product->title }}</a></h3>
+                            <h3 class="title"><a href="{{route('front.single-product',["id" => $product->id, "slug" => Str::slug($product->title, '-')])}}">{{ $product->title }}</a></h3>
                             @if($product->offer != null)
                                 <span class="price"><del>{{ $product->price."$" }}</del>{{ $product->offer . "$" }}</span>
                             @else
@@ -60,7 +60,7 @@
                         @lang('front.lot')
                         <span>@lang('front.change')</span></h3>
                     <p>@lang('front.each')</p>
-                    <a href="#" class="read-more-btn2 btn">
+                    <a href="{{route('front.products')}}" class="read-more-btn2 btn">
                         @lang('front.shop-now')
                     </a>
 

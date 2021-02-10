@@ -54,6 +54,7 @@
                                         <th>@lang('admin.email')</th>
                                         <th>@lang('admin.subject')</th>
                                         <th>@lang('admin.message')</th>
+                                        <th>@lang('front.send-at')</th>
                                     </tr>
                                     </thead>
                                     @if(count($contacts)>0)
@@ -65,6 +66,7 @@
                                                 <td>{{ $contact->email }}</td>
                                                 <td>{{ $contact->subject }}</td>
                                                 <td>{{ $contact->message }}</td>
+                                                <td>{{ $contact->created_at }}</td>
                                             </tr>
                                         @endforeach
                                         </tbody>

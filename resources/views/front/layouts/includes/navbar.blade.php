@@ -3,7 +3,7 @@
         <div class="top-right-strip row">
             <!--/left-->
             <div class="top-hny-left-content col-lg-6 pl-lg-0">
-                <h6>@lang('front.header-offer')<a href="#" target="_blank">@lang('front.click-here')<span class="fa fa-hand-o-right hand-icon" aria-hidden="true"></span> <span class="hignlaite">@lang('front.details')</span></a></h6>
+                <h6>@lang('front.header-offer')<a href="{{route('front.products')}}" target="_blank">@lang('front.click-here')<span class="fa fa-hand-o-right hand-icon" aria-hidden="true"></span> <span class="hignlaite">@lang('front.details')</span></a></h6>
             </div>
             <!--//left-->
             <!--/right-->
@@ -52,7 +52,6 @@
                         @if(isset($error))
                             <div class="error">{{$error}}</div>
                         @endif
-
                         <form action="{{route('auth.login')}}" method="post">
                             @csrf
                             <div class="form-group">
@@ -77,7 +76,6 @@
                         </form>
                         <p class="login-texthny mb-2" style="font-size: 12px;">@lang('front.new-account')</p>
                         <button  class="submit-login btn mb-4 register-close" >@lang('front.register')</button>
-
                         <!--//login-form-->
                     </div>
                     <!---->
@@ -139,7 +137,6 @@
         <div class="container-fluid serarc-fluid">
             <a class="navbar-brand" href="{{route('front.homepage')}}">
                <span class="lohny">@lang('front.o')</span>@lang('front.stora')</a>
-
             <div class="search-right">
 
                 <a href="#search" title="search"><span class="fa fa-search mr-2" aria-hidden="true"></span>
@@ -171,12 +168,17 @@
                         <a class="nav-link" href="{{route('front.about')}}">@lang('front.about')</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="about.html">@lang('front.products')</a>
+                        <a class="nav-link" href="{{route('front.products')}}">@lang('front.products')</a>
                     </li>
-
-
                     <li class="nav-item">
-                        <a class="nav-link" href="contact.html">@lang('front.contact')</a>
+                        <a class="nav-link" href="{{route('front.contact')}}">@lang('front.contact')</a>
+                    </li>
+                    <li class="nav-item">
+                        @if(app()->getLocale()=='ar')
+                        <a class="nav-link" href="{{ LaravelLocalization::getLocalizedURL('en', null, [], true) }}">EN</a>
+                        @else
+                            <a class="nav-link" href="{{ LaravelLocalization::getLocalizedURL('ar', null, [], true) }}">AR</a>
+                        @endif
                     </li>
                 </ul>
 

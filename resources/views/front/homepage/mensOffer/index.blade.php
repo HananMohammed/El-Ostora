@@ -8,7 +8,7 @@
 
                 <div class="photo-6-inf-right col-lg-6">
                     {!! $data["mens-offer"][0]->text !!}
-                    <a href="#" class="read-more btn">
+                    <a href="{{route('front.products')}}" class="read-more btn">
                         @lang('front.shop-now')
                     </a>
                 </div>

@@ -10,16 +10,14 @@
                 @foreach($data["categories"] as $category)
                 <div class="col-lg-2 col-md-4 col-6 welcome-image">
                     <div class="boxhny13">
-                        <a href="#URL">
+                        <a href="{{route('front.single-category-products',["id" => $category->id, "slug" => Str::slug($category->title, '-')])}}">
                             <img src="{{asset_public('storage/uploads/'.$category->image)}}" class="img-fluid" alt="" />
                             <div class="boxhny-content">
                                 <h3 class="title">@lang('front.products')</h3>
                             </div>
                         </a>
                     </div>
-                    <h4><a href="#URL">{{$category->title}}</a></h4>
-
-
+                    <h4><a href="{{route('front.single-category-products',["id" => $category->id, "slug" => Str::slug($category->title, '-')])}}">{{$category->title}}</a></h4>
                 </div>
                 @endforeach
             </div>

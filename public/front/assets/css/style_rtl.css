@@ -47,3 +47,7 @@ a.read-more.btn {
     position: relative;
     left: 70%;
 }
+.navbar-expand-lg .navbar-nav {
+    position: relative;
+    left: -58%;
+}

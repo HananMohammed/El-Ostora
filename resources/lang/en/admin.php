@@ -101,7 +101,7 @@ return [
     "edit-category" => "Edit Category",
     "select-category" => "Select Category",
     "blogs" => "Blogs",
-
+    "followed-at" => "Followed.At"
 
 
 

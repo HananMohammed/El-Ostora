@@ -142,7 +142,12 @@ New from legend for the winter season in more than one color",
     "accept" =>"WE ACCEPT:",
     "shobra" => "The beginning of Egypt Alexandria Agricultural Road - El Farnawany Station - Shubra El Khaima",
     "what-we" => "What We",
-    "offer" => "Offer"
+    "offer" => "Offer",
+    "category" => "Categories",
+    "size" =>"AVAILABLE SIZE",
+    "send-at" =>"Sent At"
+
+
 
 
 

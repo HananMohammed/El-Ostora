@@ -51,6 +51,7 @@
                                     <tr role="row">
                                         <th>@lang('dashboard.id')</th>
                                         <th>@lang('admin.email')</th>
+                                        <th>@lang('admin.followed-at')</th>
                                     </tr>
                                     </thead>
                                     @if(count($followers)>0)
@@ -59,6 +60,7 @@
                                             <tr>
                                                 <td>{{ $follower->id }}</td>
                                                 <td>{{ $follower->email }}</td>
+                                                <td>{{ $follower->created_at }}</td>
                                             </tr>
                                         @endforeach
                                         </tbody>

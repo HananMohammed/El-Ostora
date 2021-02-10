@@ -17,18 +17,16 @@
                                         allow="autoplay; fullscreen" allowfullscreen></iframe>
                             </div>
                         </div>
-                        <!--//popup-->
                     </div>
                 </div>
                 <div class="video-gd-left col-lg-4 p-lg-5 p-4">
                     <div class="p-xl-4 p-0 video-wrap">
                         {!! $data["women-offer"][0]->text !!}
-                        <a href="#" class="read-more btn">
+                        <a href="{{route('front.products')}}" class="read-more btn">
                             @lang('front.shop-now')
                         </a>
                     </div>
                 </div>
-
             </div>
         </div>
     </div>

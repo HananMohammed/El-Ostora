@@ -22,7 +22,7 @@
                                 <div class="container" dir="ltr" style="direction:ltr;">
                                     <div class="carousel-caption" >
                                         {!! $slider->text !!}
-                                        <a href="#" class="shop-button btn">
+                                        <a href="{{route('front.products')}}" class="shop-button btn">
                                             @lang('front.shop-now')
                                         </a>
 

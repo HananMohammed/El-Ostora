@@ -158,6 +158,7 @@
                         <p>@lang('front.subscribe')</p>
 
                         <form action="{{route('front.newsLetter')}}" method="post" class="signin-form mt-lg-5 mt-4">
+                            @csrf
                             <div class="forms-gds" @if(app()->getLocale() == 'ar')dir="ltr" style="direction: ltr;" @endif>
                                 <div class="form-input">
                                     <input type="email" name="email" placeholder="@lang('front.email-here')" required="">
@@ -165,7 +166,7 @@
                                         <div class="error">{{ $errors->first('email')}}</div>
                                     @endif
                                 </div>
-                                <div class="form-input"><button class="btn">@lang('front.Join')</button></div>
+                                <div class="form-input"><button type="submit" class="btn">@lang('front.Join')</button></div>
                             </div>
                         </form>
                     </div>

@@ -17,6 +17,7 @@ class ContactController extends Controller
 
     public function send(ContactRequest $request)
     {
+
         $data = $request->all();
         $model = new contact();
         $model->create($data);

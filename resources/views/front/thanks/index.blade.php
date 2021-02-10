@@ -35,10 +35,10 @@
     <div class="error error-5 d-flex flex-row-fluid bgi-size-cover bgi-position-center" style="background-image: url({{asset_public('admin/assets/media/error/bg5.jpg')}});">
         <!--begin::Content-->
         <div class="container d-flex flex-row-fluid flex-column justify-content-md-center p-12">
-            <h1 class="error-title font-weight-boldest text-info mt-10 mt-md-0 mb-12">Thanks</h1>
-            <p class="font-weight-boldest display-4">Thanks</p>
-            <p class="font-size-h3">Email Sends Successfully</p>
-            <a href="{{route('front.homepage')}}" class=" btn btn-info " style="width: 20%">Back Home</a>
+            <h1 class="error-title font-weight-boldest mt-10 mt-md-0 mb-12" style="color: #ff7315;">Thanks</h1>
+            <p class="font-weight-boldest display-4" style="color: #ff7315;">Thanks</p>
+            <p class="font-size-h3" style="color: #ff7315;">Email Sends Successfully</p>
+            <a href="{{route('front.homepage')}}" class=" btn btn-info2 " style="width: 20%; ">Back Home</a>
         </div>
         <!--end::Content-->
     </div>

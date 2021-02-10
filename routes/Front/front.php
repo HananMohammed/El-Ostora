@@ -25,6 +25,8 @@ Route::get('/department/{id}/{slug}', "SingleDepartmentController@index")->name(
 Route::get('/courses/{id}/{slug}', "SingleCourseController@index")->name('courses');
 Route::get('/courses', "CoursesController@index")->name('all-courses');
 Route::post("news-letter", "NewsLetterController@store")->name('newsLetter');
-
+Route::get('/products','ProductController@index')->name('products');
+Route::get('/{id}/{slug}','ProductController@singleProduct')->name('single-product');
+Route::get('/products/{id}/{slug}','CategoryController@index')->name('single-category-products');
 
 
