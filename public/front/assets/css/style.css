@@ -25,3 +25,22 @@
     font-size: 20px;
     padding-top: 4px;
 }
+.alert-info {
+    width: 50%;
+    z-index: 1000;
+    opacity: .8;
+    position: relative;
+    left: 15%;
+    text-align: center;
+    /* justify-content: center; */
+}
+.badge{
+    position: relative;
+    top: -10px;
+    right: 5px;
+    z-index: 1001;
+    color: #ff7315;
+}
+button.top_transmitv_cart:hover .badge {
+    color: #fff;
+}

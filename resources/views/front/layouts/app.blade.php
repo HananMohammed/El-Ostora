@@ -123,20 +123,20 @@
     });
 </script>
 <!-- cart-js -->
-<script src="{{asset_public('front/assets/js/minicart.js')}}"></script>
-<script>
-    transmitv.render();
+{{--<script src="{{asset_public('front/assets/js/minicart.js')}}"></script>--}}
+{{--<script>--}}
+{{--    transmitv.render();--}}
 
-    transmitv.cart.on('transmitv_checkout', function (evt) {
-        var items, len, i;
+{{--    transmitv.cart.on('transmitv_checkout', function (evt) {--}}
+{{--        var items, len, i;--}}
 
-        if (this.subtotal() > 0) {
-            items = this.items();
+{{--        if (this.subtotal() > 0) {--}}
+{{--            items = this.items();--}}
 
-            for (i = 0, len = items.length; i < len; i++) {}
-        }
-    });
-</script>
+{{--            for (i = 0, len = items.length; i < len; i++) {}--}}
+{{--        }--}}
+{{--    });--}}
+{{--</script>--}}
 <!-- //cart-js -->
 <!--pop-up-box-->
 <script src="{{asset_public('front/assets/js/jquery.magnific-popup.js')}}"></script>

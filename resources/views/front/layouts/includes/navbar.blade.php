@@ -29,16 +29,7 @@
                     </li>
 
                @endif
-                <li class="transmitvcart galssescart2 cart cart box_1">
-                    <form action="#" method="post" class="last">
-                        <input type="hidden" name="cmd" value="_cart">
-                        <input type="hidden" name="display" value="1">
-                        <button class="top_transmitv_cart" type="submit" name="submit" value="">
-                            @lang('front.cart')
-                            <span class="fa fa-shopping-cart"></span>
-                        </button>
-                    </form>
-                </li>
+                @include('front.cart.index')
             </ul>
             <!--//right Login -->
             <div class="overlay-login text-left">
@@ -186,4 +177,14 @@
         </div>
     </nav>
     <!--//nav-->
+    @if(session()->get('error'))
+    <div class="alert alert-info alert-dismissible fade show" role="alert">
+        <strong>{{ session()->get('error') }}</strong>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+        @endif
 </header>
+<!-- //content-6-section -->
+

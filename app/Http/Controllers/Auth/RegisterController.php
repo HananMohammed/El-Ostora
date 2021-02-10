@@ -24,6 +24,9 @@ class RegisterController extends Controller
         auth()->login($user);
         if($user)
         {
+            if (!empty(session()->get('error')))
+                $request->session()->forget('error');
+
             if ($user->is_admin == 1) {
                 return redirect()->route('admin.adminPanel');
             }else{

@@ -107,6 +107,11 @@ return[
     "stora" => "STORA",
     "search" => "Search here",
     "products" =>"Our Products",
+    "product" => "Product",
+    "price" => "Price",
+    "qty" => "Qty",
+    "total" => "Total",
+    "action" => "Actions",
     "new-account" => "if you don't have Account register ...",
     "username" => "User Name",
     "mens-offer" => "MEN'S FASHION",
@@ -117,6 +122,7 @@ return[
     "shop-with-us-text" => "A legend is now resplendent with shows",
     "shop-with-us-product" => "A legend is now resplendent with products",
     "lot" => "A lot of Products & Options to",
+    "checkout" =>"Checkout",
     "change" =>"change",
     "each" => "Each design in Collection A Legend has its own character, but it is definitely different and of high quality
 New from legend for the winter season in more than one color",
@@ -145,8 +151,9 @@ New from legend for the winter season in more than one color",
     "offer" => "Offer",
     "category" => "Categories",
     "size" =>"AVAILABLE SIZE",
-    "send-at" =>"Sent At"
-
+    "send-at" =>"Sent At",
+    "login-first" => "Sorry, It's required to login first to complete Purchase...",
+    "shopping-cart" => "Your Shopping Cart",
 
 
 

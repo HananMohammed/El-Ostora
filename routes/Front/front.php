@@ -29,4 +29,7 @@ Route::get('/products','ProductController@index')->name('products');
 Route::get('/{id}/{slug}','ProductController@singleProduct')->name('single-product');
 Route::get('/products/{id}/{slug}','CategoryController@index')->name('single-category-products');
 
+Route::group(["middleware" =>'cart', "prefix" =>"cart"], function (){
+    Route::get('/add-to-cart/{id}','CartController@addToCart')->name('addToCart');
+});
 

@@ -17,7 +17,7 @@
                             <ul class="social">
                                 <li><a href="{{route('front.single-product',["id" => $product->id, "slug" => Str::slug($product->title, '-')])}}" data-tip="Quick View"><span class="fa fa-eye"></span></a></li>
 
-                                <li><a href="#" data-tip="Add to Cart"><span class="fa fa-shopping-bag"></span></a>
+                                <li><a href="{{ route('front.addToCart', $product->id) }}" data-tip="Add to Cart"><span class="fa fa-shopping-bag"></span></a>
                                 </li>
                             </ul>
                             <div class="transmitv single-item">
@@ -71,4 +71,3 @@
         </div>
     </div>
 </section>
-<!-- //content-6-section -->
