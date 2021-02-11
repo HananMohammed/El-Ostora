@@ -21,8 +21,27 @@ class CartController extends Controller
         $cart->add($product, $product->id);
 
         $request->session()->put('cart', $cart);
-        dd(session()->get('cart'));
-        return back()->with(["products", $cart->item, "totalPrice" => $cart->totalPrice ]);
 
+        return back();
+
+    }
+    public function removeFromCart(Request $request, $id)
+    {
+
+        $cart = Session::get('cart');
+
+        $quantity =  $cart->items[$id]["quantity"] >1 ? $cart->items[$id]["quantity"] : 1;
+
+        $price = !empty( $cart->items[$id]["item"]->offer ) ? $cart->items[$id]["item"]->offer : $cart->items[$id]["item"]->price ;
+
+        $cart->totalQuantity -= $quantity;
+
+        $cart->totalPrice -= $cart->items[$id]["quantity"] >1 ? $price * $quantity : $price ;
+
+        unset($cart->items[$id]);
+
+        Session()->put('cart', $cart);
+
+        return back();
     }
 }

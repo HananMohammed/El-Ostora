@@ -154,6 +154,8 @@ New from legend for the winter season in more than one color",
     "send-at" =>"Sent At",
     "login-first" => "Sorry, It's required to login first to complete Purchase...",
     "shopping-cart" => "Your Shopping Cart",
+    "cart-empty" => "Your Shopping Cart Still Empty",
+
 
 
 

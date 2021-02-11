@@ -31,5 +31,6 @@ Route::get('/products/{id}/{slug}','CategoryController@index')->name('single-cat
 
 Route::group(["middleware" =>'cart', "prefix" =>"cart"], function (){
     Route::get('/add-to-cart/{id}','CartController@addToCart')->name('addToCart');
+    Route::get('/remove-from-cart/{id}','CartController@removeFromCart')->name('removeFromCart');
 });
 

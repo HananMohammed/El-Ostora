@@ -17,6 +17,7 @@
                 </button>
             </div>
             <div class="modal-body">
+                @if(!empty(session()->get('cart')->items ))
                 <table class="table table-image">
                     <thead>
                     <tr>
@@ -29,6 +30,7 @@
                     </tr>
                     </thead>
                     <tbody>
+
                     @foreach(session()->get('cart')->items as $item)
                     <tr>
 
@@ -42,31 +44,51 @@
                         </td>
                         <td>@if(!empty($item["item"]->offer)){{ $item["item"]->offer * $item["quantity"]}}@else {{ $item["item"]->price * $item["quantity"]}} @endif</td>
                         <td>
-                            <a href="#" class="btn btn-danger btn-sm">
+                            <a href="{{route('front.removeFromCart',$item["item"]->id)}}" class="btn btn-danger btn-sm">
                                 <i class="fa fa-times"></i>
                             </a>
                         </td>
                     </tr>
                     @endforeach
+
                     </tbody>
                 </table>
-                <div class="d-flex justify-content-end">
-                    <h5 @if(app()->getLocale() == 'ar') dir="rtl" @endif>@lang('front.total'): <span class="price text-success">89$</span></h5>
-                </div>
+                    <div class="d-flex justify-content-end">
+                        <h5 @if(app()->getLocale() == 'ar') dir="rtl" @endif>@lang('front.total'): <span class="price" style="color: #ff7315;">{{session()->get('cart')->totalPrice." EGP"}}</span></h5>
+                    </div>
+                @else
+                <p class="error" style="text-align: center;">@lang('front.cart-empty')</p>
+                @endif
             </div>
             <div class="modal-footer border-top-0 d-flex justify-content-between">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">@lang('admin.close')</button>
-                <button type="button" class="btn btn-success">@lang('front.checkout')</button>
+                <button type="button" class="btn btn-success" @if(empty(session()->get('cart')->items )) disabled @endif>@lang('front.checkout')</button>
             </div>
         </div>
     </div>
 </div>
 @section('style')
     <style>
-        .btn-success{
-            background-color: #ec6306;
-            border-color: #ea7322;
+        .table-image .img-thumbnail{
+            width: 50%;
         }
+        .badge-info{
+            background-color:#ff7315!important;
+            top: 0px!important;
+        }
+        .btn-success{
+            background-color: #ec6306!important;
+            border-color: #ea7322!important;
+        }
+        .btn-success:hover, .btn-success:focus{
+            background-color: #232020;
+            border-color: #232020;
+        }
+        .btn-success:disabled {
+            color: #fff;
+            background-color: #e3772d;
+            border-color: #be7545;
+
         .table-image {
         thead {
         td,

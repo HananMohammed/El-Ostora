@@ -17,6 +17,7 @@ class Cart extends Model
     {
         if ($oldCart)
         {
+
             $this->items = $oldCart->items;
             $this->totalQuantity = $oldCart->totalQuantity;
             $this->totalPrice = $oldCart->totalPrice;
@@ -25,6 +26,7 @@ class Cart extends Model
 
     public function add($item, $id)
     {
+
         $storedItem = ["quantity" => 0, "price" => $item->price, "item" => $item];
         if ($this->items)
         {
@@ -33,10 +35,18 @@ class Cart extends Model
                 $storedItem = $this->items[$id];
             }
         }
+
         $storedItem["quantity"]++;
-        $storedItem["price"] = $storedItem["price"] * $storedItem["quantity"];
+
+        $price = !empty( $storedItem["offer"] ) ? $storedItem["offer"] : $storedItem["price"] ;
+
+        $storedItem["price"] = $price * $storedItem["quantity"];
+
         $this->items[$id] = $storedItem;
+
         $this->totalQuantity++;
-        $this->totalPrice += $item->price;
+
+        $this->totalPrice += !empty( $item->offer) ? $item->offer : $item->price ;
+
     }
 }
