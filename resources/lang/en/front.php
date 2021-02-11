@@ -155,6 +155,26 @@ New from legend for the winter season in more than one color",
     "login-first" => "Sorry, It's required to login first to complete Purchase...",
     "shopping-cart" => "Your Shopping Cart",
     "cart-empty" => "Your Shopping Cart Still Empty",
+    "complete-checkout" => "Complete Checkout",
+    "first-name" => "First Name",
+    "last-name" => "Last Name",
+    "phone" => "Phone Number",
+    "address" => "Address",
+    "address-2" =>"Address 2 (Optional)",
+    "country" =>"Country",
+    "state" => "State",
+    "zip" =>"Zip",
+    "delivery-method" => "Delivery Method Information",
+    "door" => "Shipping address is the same as my billing address",
+    "info" => "Save this information for next time"
+
+
+
+
+
+
+
+
 
 
 

@@ -4,8 +4,8 @@ namespace App\Http\Middleware;
 
 use Closure;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
-class Cart
+
+class CompleteCheckout
 {
     /**
      * Handle an incoming request.
@@ -16,14 +16,14 @@ class Cart
      */
     public function handle(Request $request, Closure $next)
     {
-        if ( Auth::check() )
+        if (session()->get('cart')->totalQuantity > 0)
         {
             return $next($request);
         }
         if (!empty(session()->get('error')))
             $request->session()->forget('error');
 
-        $request->session()->put('error', __('front.login-first'));
+        $request->session()->put('error', __('No Items Added Yet , Please Add Items To Complete Checkout'));
 
         return redirect('/');
     }

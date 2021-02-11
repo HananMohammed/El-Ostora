@@ -62,7 +62,9 @@
             </div>
             <div class="modal-footer border-top-0 d-flex justify-content-between">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">@lang('admin.close')</button>
-                <button type="button" class="btn btn-success" @if(empty(session()->get('cart')->items )) disabled @endif>@lang('front.checkout')</button>
+               @if(session()->get('cart')->totalQuantity >0 )
+                    <a href="{{route('front.checkout')}}" class="btn btn-success" @if(empty(session()->get('cart')->items )) disabled @endif>@lang('front.checkout')</a>
+               @endif
             </div>
         </div>
     </div>

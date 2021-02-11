@@ -70,6 +70,7 @@ class Kernel extends HttpKernel
         'localeViewPath'          => \Mcamara\LaravelLocalization\Middleware\LaravelLocalizationViewPath::class,
         'is_admin' => \App\Http\Middleware\IsAdmin::class,
         'cart' => \App\Http\Middleware\Cart::class,
+        'complete-checkout' => \App\Http\Middleware\CompleteCheckout::class,
 
     ];
 }
