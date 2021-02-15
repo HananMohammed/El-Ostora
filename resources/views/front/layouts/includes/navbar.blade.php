@@ -177,14 +177,31 @@
         </div>
     </nav>
     <!--//nav-->
-    @if(session()->get('error'))
     <div class="alert alert-info alert-dismissible fade show" role="alert">
         <strong>{{ session()->get('error') }}</strong>
         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
             <span aria-hidden="true">&times;</span>
         </button>
     </div>
-        @endif
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        <strong>{{ session()->get('success') }}</strong>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
 </header>
 <!-- //content-6-section -->
-
+@if(session()->get('error'))
+    @section("scripts")
+        <script>
+            $(".alert-info").fadeIn(3000).fadeOut(2000);
+        </script>
+    @endsection
+@endif
+@if(session()->get('success'))
+@section("scripts")
+    <script>
+        $(".alert-success").fadeIn(3000).fadeOut(2000);
+    </script>
+@endsection
+@endif

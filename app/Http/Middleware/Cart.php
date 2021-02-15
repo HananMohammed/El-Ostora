@@ -23,6 +23,7 @@ class Cart
         if (!empty(session()->get('error')))
             $request->session()->forget('error');
 
+
         $request->session()->put('error', __('front.login-first'));
 
         return redirect('/');

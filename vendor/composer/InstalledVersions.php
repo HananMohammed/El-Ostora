@@ -29,7 +29,7 @@ private static $installed = array (
     'aliases' => 
     array (
     ),
-    'reference' => 'e9f2cffdd5f46256533ac2da6bd7c6a365578f79',
+    'reference' => '347c3bb1fe7a4463c6364e8fe11e088506312c24',
     'name' => 'laravel/laravel',
   ),
   'versions' => 
@@ -522,7 +522,7 @@ private static $installed = array (
       'aliases' => 
       array (
       ),
-      'reference' => 'e9f2cffdd5f46256533ac2da6bd7c6a365578f79',
+      'reference' => '347c3bb1fe7a4463c6364e8fe11e088506312c24',
     ),
     'laravel/sail' => 
     array (
@@ -696,6 +696,15 @@ private static $installed = array (
       array (
       ),
       'reference' => 'f34c2b11eb9d2c9318e13540a1dbc2a3afbd939c',
+    ),
+    'paypal/rest-api-sdk-php' => 
+    array (
+      'pretty_version' => '1.14.0',
+      'version' => '1.14.0.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '72e2f2466975bf128a31e02b15110180f059fc04',
     ),
     'phar-io/manifest' => 
     array (

@@ -33,5 +33,8 @@ Route::group(["middleware" =>'cart', "prefix" =>"cart"], function (){
     Route::get('/add-to-cart/{id}','CartController@addToCart')->name('addToCart');
     Route::get('/remove-from-cart/{id}','CartController@removeFromCart')->name('removeFromCart');
     Route::get('/complete/checkout','CheckoutController@index')->name('checkout')->middleware('complete-checkout');
+    Route::post('/complete/payment','PaymentController@completePayment')->name('payment')->middleware('complete-checkout');
+    Route::get('/complete/paypal', 'PaymentController@getPaymentStatus')->name('status');
+
 });
 

@@ -1,28 +1,104 @@
 @extends('front.layouts.app')
 @section('title','Homepage')
+@section('style')
+@if(app()->getLocale()=='ar')
+    <style>
+        .wow .label1{
+            position: relative;
+            right: -195px;
+        }
+        .wow .label2{
+            position: relative;
+            right: -180px;
+        }
+        .wow .label3{
+            position: relative;
+            right: -516px;
+        }
+        .wow .label4{
+            position: relative;
+            right: -435px;
+        }
+        .wow .label5{
+            position: relative;
+            right: -90px;
+        }
+        .wow .label6{
+            position: relative;
+            right: -115px;
+        }
+    </style>
+@endif
+    <style>
+        .wow .error{
+            font-size: 12px;
+        }
+        .wow .btn-primary{
+            display: inline-block;
+            outline: none;
+            border: none;
+            font-weight: 600;
+            padding: 12px 32px;
+            font-size: 16px;
+            background-color: #232020;
+            margin-top: 20px;
+            color: #fff;
+            border-radius: 25px;
+        }
+        .wow .btn-primary:hover{
+            background-color: #ff7315;
+        }
+        .text-muted{
+            color: #ff7315!important;
+        }
+        .badge-secondary{
+            background-color: #232020;
+        }
+    </style>
+@endsection
 @section('content')
 @include('front.checkout.banner.index')
 <!--Main layout-->
  <main class="mt-5 pt-4">
     <div class="container wow fadeIn">
       <!-- Heading -->
-      <h2 class="my-5 h2 text-center">@lang('front.complete-checkout')</h2>
+      <h3 class="my-5 h2 text-center hny-title" @if(app()->getLocale() == 'ar') style="left: 0px;" @endif><span>@lang('front.complete-checkout')</span></h3>
       <!--Grid row-->
       <div class="row">
         <!--Grid column-->
         <div class="col-md-8 mb-4">
           <!--Card-->
-          <div class="card">
+          <div class="card" @if( app()->getLocale()=='ar') dir="ltr" @endif>
             <!--Card content-->
-            <form class="card-body">
+
+              @if ($message = Session::get('success'))
+                  <div class="custom-alerts alert alert-success fade in">
+                      <button type="button" class="close" data-dismiss="alert" aria-hidden="true"></button>
+                      {!! $message !!}
+                  </div>
+                  <?php Session::forget('success');?>
+              @endif
+
+              @if ($message = Session::get('error'))
+                  <div class="custom-alerts alert alert-danger fade in">
+                      <button type="button" class="close" data-dismiss="alert" aria-hidden="true"></button>
+                      {!! $message !!}
+                  </div>
+                  <?php Session::forget('error');?>
+              @endif
+            <form class="card-body" action="{{route('front.payment')}}"  method="POST">
+                @csrf
               <!--Grid row-->
               <div class="row">
                 <!--Grid column-->
                 <div class="col-md-6 mb-2">
                   <!--firstName-->
                   <div class="md-form ">
-                      <label for="firstName" class="">@lang('front.first-name')</label>
+                      <label for="firstName" class="label1">@lang('front.first-name')</label>
                       <input type="text" id="firstName" name="firstName" placeholder="First Name" class="form-control">
+                      @if($errors->has('firstName'))
+                          <div class="error">{{ $errors->first('firstName') }}</div>
+                      @endif
                   </div>
                 </div>
                 <!--Grid column-->
@@ -30,60 +106,84 @@
                 <div class="col-md-6 mb-2">
                   <!--lastName-->
                   <div class="md-form">
-                      <label for="lastName" class="">@lang('front.last-name')</label>
+                      <label for="lastName" class="label1">@lang('front.last-name')</label>
                       <input type="text" id="lastName" name="lastName" placeholder="Last Name" class="form-control">
+                      @if($errors->has('lastName'))
+                          <div class="error">{{ $errors->first('lastName') }}</div>
+                      @endif
                   </div>
                 </div>
                 <!--Grid column-->
                   <!--email-->
                   <div class="col-md-6 mb-2">
-                      <label for="email" class="">@lang('front.email')</label>
+                      <label for="email" class="label2">@lang('front.email')</label>
                       <div class="md-form input-group pl-0 mb-3">
                           <div class="input-group-prepend">
                               <span class="input-group-text" id="basic-addon1">@</span>
                           </div>
                           <input type="email" name="email" class="form-control py-0" placeholder="youremail@example.com" aria-describedby="basic-addon1">
                       </div>
+                      @if($errors->has('email'))
+                          <div class="error">{{ $errors->first('email') }}</div>
+                      @endif
                   </div>
                   <!--Phone-->
                   <div class="col-md-6 mb-2">
                       <div class="md-form mb-3">
-                          <label for="phone" class="">@lang('front.phone')</label>
+                          <label for="phone" class="label1">@lang('front.phone')</label>
                           <input type="text" name="phone" id="phone" class="form-control" placeholder="phone Number">
+                          @if($errors->has('phone'))
+                              <div class="error">{{ $errors->first('phone') }}</div>
+                          @endif
                       </div>
                   </div>
               </div>
               <!--Grid row-->
               <div class="md-form mb-3">
-                  <label for="address" class="">@lang('front.address')</label>
+                  <label for="address" class="label3">@lang('front.address')</label>
                   <input type="text" id="address" name="address[]" class="form-control" placeholder="1234 Main St">
+                  @if($errors->has('address'))
+                      <div class="error">{{ $errors->first('address') }}</div>
+                  @endif
               </div>
 
               <!--address-2-->
               <div class="md-form mb-3">
-                  <label for="address-2" name="address[]"  class="">@lang('front.address-2')</label>
-                  <input type="text" id="address-2" class="form-control" placeholder="Apartment or suite">
+                  <label for="address-2" name="address[]"  class="label4">@lang('front.address-2')</label>
+                  <input type="text" name="address[]" id="address-2" class="form-control" placeholder="Apartment or suite">
+                  @if($errors->has('address'))
+                      <div class="error">{{ $errors->first('address') }}</div>
+                  @endif
               </div>
               <!--Grid row-->
               <div class="row">
                 <!--Grid column-->
                 <div class="col-lg-4 col-md-12 mb-4">
-                  <label for="country">@lang('front.country')</label>
-                    <input type="text" id="country" name="country" class="form-control" placeholder="Enter Your Country">
+                  <label for="country" class="label6">@lang('front.country')</label>
+                    <input type="text" id="country" name="country" class="form-control " placeholder="Enter Your Country">
+                    @if($errors->has('country'))
+                        <div class="error">{{ $errors->first('country') }}</div>
+                    @endif
                 </div>
                 <!--Grid column-->
                 <!--Grid column-->
                 <div class="col-lg-4 col-md-6 mb-4">
-                  <label for="state">@lang('front.state')</label>
+                  <label for="state" class="label6">@lang('front.state')</label>
                     <input type="text" id="state" name="state" class="form-control" placeholder="Enter Your state">
+                    @if($errors->has('state'))
+                        <div class="error">{{ $errors->first('state') }}</div>
+                    @endif
                 </div>
                 <!--Grid column-->
 
                 <!--Grid column-->
                 <div class="col-lg-4 col-md-6 mb-4">
 
-                  <label for="zip">Zip</label>
-                  <input type="text" class="form-control" id="zip" placeholder="ZIP Code" required>
+                  <label for="zip" class="label5">@lang('front.zip')</label>
+                  <input type="text" class="form-control" name="zip" id="zip" placeholder="ZIP Code" required>
+                    @if($errors->has('zip'))
+                        <div class="error">{{ $errors->first('zip') }}</div>
+                    @endif
                 </div>
                 <!--Grid column-->
               </div>
@@ -92,64 +192,50 @@
             <label for="delivery">@lang('front.delivery-method')</label>
              <div id="delivery">
                  <div class="custom-control custom-checkbox">
-                     <input type="checkbox" class="custom-control-input" id="same-address">
+                     <input type="checkbox" name="same-address" value="1" class="custom-control-input" id="same-address">
                      <label class="custom-control-label" for="same-address">@lang('front.door')</label>
+                     @if($errors->has('same-address'))
+                         <div class="error">{{ $errors->first('same-address') }}</div>
+                     @endif
                  </div>
                  <div class="custom-control custom-checkbox">
-                     <input type="checkbox" class="custom-control-input" id="save-info">
+                     <input type="checkbox"  name="save-info" value="1" class="custom-control-input" id="save-info">
                      <label class="custom-control-label" for="save-info">@lang('front.info')</label>
+                     @if($errors->has('save-info'))
+                         <div class="error">{{ $errors->first('save-info') }}</div>
+                     @endif
                  </div>
              </div>
               <hr>
               <div class="d-block my-3">
-                <div class="custom-control custom-radio">
-                  <input id="credit" name="paymentMethod" type="radio" class="custom-control-input" checked required>
-                  <label class="custom-control-label" for="credit">Credit card</label>
+              <label for="paymentMethod">@lang('front.payment-method')</label>
+                <div class="custom-control custom-radio" id="paymentMethod">
+                  <input id="credit" name="payment-method" value="1" type="radio" class="custom-control-input">
+                  <label class="custom-control-label" for="credit">@lang('front.cache')</label>
                 </div>
                 <div class="custom-control custom-radio">
-                  <input id="debit" name="paymentMethod" type="radio" class="custom-control-input" required>
-                  <label class="custom-control-label" for="debit">Debit card</label>
+                  <input id="debit" name="payment-method" value="2" type="radio" class="custom-control-input">
+                  <label class="custom-control-label" for="debit">@lang('front.weAccept')</label>
                 </div>
                 <div class="custom-control custom-radio">
-                  <input id="paypal" name="paymentMethod" type="radio" class="custom-control-input" required>
-                  <label class="custom-control-label" for="paypal">Paypal</label>
+                  <input id="paypal" name="payment-method" value="3" type="radio" class="custom-control-input">
+                  <label class="custom-control-label" for="paypal">@lang('front.paypal')</label>
                 </div>
-              </div>
-              <div class="row">
-                <div class="col-md-6 mb-3">
-                  <label for="cc-name">Name on card</label>
-                  <input type="text" class="form-control" id="cc-name" placeholder="" required>
-                  <small class="text-muted">Full name as displayed on card</small>
-                  <div class="invalid-feedback">
-                    Name on card is required
-                  </div>
-                </div>
-                <div class="col-md-6 mb-3">
-                  <label for="cc-number">Credit card number</label>
-                  <input type="text" class="form-control" id="cc-number" placeholder="" required>
-                  <div class="invalid-feedback">
-                    Credit card number is required
-                  </div>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-md-3 mb-3">
-                  <label for="cc-expiration">Expiration</label>
-                  <input type="text" class="form-control" id="cc-expiration" placeholder="" required>
-                  <div class="invalid-feedback">
-                    Expiration date required
-                  </div>
-                </div>
-                <div class="col-md-3 mb-3">
-                  <label for="cc-expiration">CVV</label>
-                  <input type="text" class="form-control" id="cc-cvv" placeholder="" required>
-                  <div class="invalid-feedback">
-                    Security code required
-                  </div>
-                </div>
+                  @if($errors->has('payment-method'))
+                      <div class="error">{{ $errors->first('payment-method') }}</div>
+                  @endif
               </div>
               <hr class="mb-4">
-              <button class="btn btn-primary btn-lg btn-block" type="submit">Continue to checkout</button>
+                <div>
+                    @if(!empty(session()->get('cart')->items))
+                        @foreach(session()->get('cart')->items as $item)
+                            <input type="hidden" name="product[]" value="{{$item["item"]->id}}">
+                        @endforeach
+                        <input type="hidden" name="amount" value="{{session()->get('cart')->totalPrice}}"  >
+                    @endif
+
+                </div>
+              <input class="btn btn-primary btn-lg btn-block" type="submit" value="@lang('front.continue-checkout') ">
 
             </form>
 
@@ -167,55 +253,25 @@
             <span class="text-muted">Your cart</span>
             <span class="badge badge-secondary badge-pill">3</span>
           </h4>
-
+        @if(!empty(session()->get('cart')->items ))
           <!-- Cart -->
           <ul class="list-group mb-3 z-depth-1">
-            <li class="list-group-item d-flex justify-content-between lh-condensed">
-              <div>
-                <h6 class="my-0">Product name</h6>
-                <small class="text-muted">Brief description</small>
-              </div>
-              <span class="text-muted">$12</span>
-            </li>
-            <li class="list-group-item d-flex justify-content-between lh-condensed">
-              <div>
-                <h6 class="my-0">Second product</h6>
-                <small class="text-muted">Brief description</small>
-              </div>
-              <span class="text-muted">$8</span>
-            </li>
-            <li class="list-group-item d-flex justify-content-between lh-condensed">
-              <div>
-                <h6 class="my-0">Third item</h6>
-                <small class="text-muted">Brief description</small>
-              </div>
-              <span class="text-muted">$5</span>
-            </li>
-            <li class="list-group-item d-flex justify-content-between bg-light">
-              <div class="text-success">
-                <h6 class="my-0">Promo code</h6>
-                <small>EXAMPLECODE</small>
-              </div>
-              <span class="text-success">-$5</span>
-            </li>
+              @foreach(session()->get('cart')->items as $item)
+                <li class="list-group-item d-flex justify-content-between lh-condensed">
+                    <img src="{{asset_public('storage/uploads/'.$item["item"]->image)}}" class="img-fluid img-thumbnail" alt="Sheep" style="width: 30%;">
+                    <div>
+                        <h6 class="my-0">{{$item["item"]->title}}</h6>
+                        <div class="text-muted">@if(!empty($item["item"]->offer)){{ $item["item"]->offer." EGP" }}@else {{ $item["item"]->price." EGP" }} @endif</div>
+                    </div>
+                </li>
+              @endforeach
             <li class="list-group-item d-flex justify-content-between">
-              <span>Total (USD)</span>
-              <strong>$20</strong>
+              <h5>@lang('front.total')</h5>
+              <strong>{{session()->get('cart')->totalPrice." EGP"}}</strong>
             </li>
           </ul>
           <!-- Cart -->
-
-          <!-- Promo code -->
-          <form class="card p-2">
-            <div class="input-group">
-              <input type="text" class="form-control" placeholder="Promo code" aria-label="Recipient's username" aria-describedby="basic-addon2">
-              <div class="input-group-append">
-                <button class="btn btn-secondary btn-md waves-effect m-0" type="button">Redeem</button>
-              </div>
-            </div>
-          </form>
-          <!-- Promo code -->
-
+        @endif
         </div>
         <!--Grid column-->
 

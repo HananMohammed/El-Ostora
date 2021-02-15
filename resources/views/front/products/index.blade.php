@@ -26,27 +26,21 @@
                                                 <ul class="social">
                                                     <li><a href="{{route('front.single-product',["id" => $product->id, "slug" => Str::slug($product->title, '-')])}}" data-tip="Quick View"><span class="fa fa-eye"></span></a></li>
 
-                                                    <li><a href="#" data-tip="Add to Cart"><span class="fa fa-shopping-bag"></span></a>
+                                                    <li><a href="{{ route('front.addToCart', $product->id) }}" data-tip="Add to Cart"><span class="fa fa-shopping-bag"></span></a>
                                                     </li>
                                                 </ul>
                                                 <div class="transmitv single-item">
-                                                    <form action="#" method="post">
-                                                        <input type="hidden" name="cmd" value="_cart">
-                                                        <input type="hidden" name="add" value="1">
-                                                        <input type="hidden" name="transmitv_item" value="Women Maroon Top">
-                                                        <input type="hidden" name="amount" value="899.99">
-                                                        <button type="submit" class="transmitv-cart ptransmitv-cart add-to-cart">
-                                                            @lang('front.cart')
-                                                        </button>
-                                                    </form>
+                                                    <a href="{{ route('front.addToCart', $product->id) }}"  class="transmitv-cart ptransmitv-cart add-to-cart">
+                                                        @lang('front.cart')
+                                                    </a>
                                                 </div>
                                             </div>
                                             <div class="product-content">
                                                 <h3 class="title"><a href="{{route('front.single-product',["id" => $product->id, "slug" => Str::slug($product->title, '-')])}}">{{ $product->title }}</a></h3>
                                                 @if($product->offer != null)
-                                                    <span class="price"><del>{{ $product->price."$" }}</del>{{ $product->offer . "$" }}</span>
+                                                    <span class="price"><del>{{ $product->price." EGP" }}</del>{{ $product->offer . " EGP" }}</span>
                                                 @else
-                                                    <span class="price">{{ $product->price . "$" }}</span>
+                                                    <span class="price">{{ $product->price . " EGP" }}</span>
                                                 @endif
 
                                             </div>

@@ -166,7 +166,26 @@ New from legend for the winter season in more than one color",
     "zip" =>"Zip",
     "delivery-method" => "Delivery Method Information",
     "door" => "Shipping address is the same as my billing address",
-    "info" => "Save this information for next time"
+    "info" => "Save this information for next time",
+    "cache" => "Cache on Delivery",
+    "weAccept" => "We Accept Payment",
+    "paypal" => "Paypal Payment",
+    "payment-method" => "Payment Methods",
+    "continue-checkout" =>"Continue Checkout",
+    "get" =>"Get in",
+    "touch" =>"touch",
+    "lead" =>"We're ready to lead you into the future with Business Services",
+    "Call Us : " =>"Call Us : ",
+    "Email :" =>"Email :",
+    "Hours" => "Hours",
+    "Business Service:" => "Business Service: ",
+    "Customer support:" => "Customer support:",
+    "Fill" => "Fill out the form",
+    "Lorem" => "Lorem illum facere aperiam sequi optio consectetur adipisicing elitFuga, suscipit totam animi
+    consequatur saepe blanditiis.Lorem ipsum dolor sit amet,Ea consequuntur illum facere aperiam
+    sequi optio consectetur adipisicing elit. Fuga, suscipit totam animi consequatur saepe
+    blanditiis.",
+    "order-done" =>"Order Done , and will be delivered from 3 to 5 working days"
 
 
 
