@@ -194,14 +194,14 @@
 @if(session()->get('error'))
     @section("scripts")
         <script>
-            $(".alert-info").fadeIn(3000).fadeOut(2000);
+            $(".alert-info").fadeIn(5000).fadeOut(5000);
         </script>
     @endsection
 @endif
 @if(session()->get('success'))
 @section("scripts")
     <script>
-        $(".alert-success").fadeIn(3000).fadeOut(2000);
+        $(".alert-success").fadeIn(5000).fadeOut(5000);
     </script>
 @endsection
 @endif

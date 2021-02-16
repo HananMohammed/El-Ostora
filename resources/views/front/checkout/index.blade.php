@@ -3,6 +3,7 @@
 @section('style')
 @if(app()->getLocale()=='ar')
     <style>
+
         .wow .label1{
             position: relative;
             right: -195px;
@@ -54,6 +55,54 @@
         .badge-secondary{
             background-color: #232020;
         }
+        .table-image .img-thumbnail{
+            width: 50%;
+        }
+        .badge-info{
+            background-color:#ff7315!important;
+            top: 0px!important;
+        }
+        .btn-success{
+            background-color: #ec6306!important;
+            border-color: #ea7322!important;
+        }
+        .btn-success:hover, .btn-success:focus{
+            background-color: #232020;
+            border-color: #232020;
+        }
+        .btn-success:disabled {
+            color: #fff;
+            background-color: #e3772d;
+            border-color: #be7545;
+
+        .table-image {
+        thead {
+        td,
+        th {
+            border: 0;
+            color: #666;
+            font-size: 0.8rem;
+        }
+        }
+
+        td,
+        th {
+            vertical-align: middle;
+            text-align: center;
+
+        &.qty {
+             max-width: 2rem;
+         }
+        }
+        }
+
+        .price {
+            margin-left: 1rem;
+        }
+
+        .modal-footer {
+            padding-top: 0rem;
+        }
     </style>
 @endsection
 @section('content')
@@ -70,22 +119,6 @@
           <!--Card-->
           <div class="card" @if( app()->getLocale()=='ar') dir="ltr" @endif>
             <!--Card content-->
-
-              @if ($message = Session::get('success'))
-                  <div class="custom-alerts alert alert-success fade in">
-                      <button type="button" class="close" data-dismiss="alert" aria-hidden="true"></button>
-                      {!! $message !!}
-                  </div>
-                  <?php Session::forget('success');?>
-              @endif
-
-              @if ($message = Session::get('error'))
-                  <div class="custom-alerts alert alert-danger fade in">
-                      <button type="button" class="close" data-dismiss="alert" aria-hidden="true"></button>
-                      {!! $message !!}
-                  </div>
-                  <?php Session::forget('error');?>
-              @endif
             <form class="card-body" action="{{route('front.payment')}}"  method="POST">
                 @csrf
               <!--Grid row-->
@@ -95,7 +128,7 @@
                   <!--firstName-->
                   <div class="md-form ">
                       <label for="firstName" class="label1">@lang('front.first-name')</label>
-                      <input type="text" id="firstName" name="firstName" placeholder="First Name" class="form-control">
+                      <input type="text" id="firstName" value="{{old('firstName')}}" name="firstName" placeholder="First Name" class="form-control">
                       @if($errors->has('firstName'))
                           <div class="error">{{ $errors->first('firstName') }}</div>
                       @endif
@@ -107,7 +140,7 @@
                   <!--lastName-->
                   <div class="md-form">
                       <label for="lastName" class="label1">@lang('front.last-name')</label>
-                      <input type="text" id="lastName" name="lastName" placeholder="Last Name" class="form-control">
+                      <input type="text" id="lastName" value="{{old('lastName')}}" name="lastName" placeholder="Last Name" class="form-control">
                       @if($errors->has('lastName'))
                           <div class="error">{{ $errors->first('lastName') }}</div>
                       @endif
@@ -121,7 +154,7 @@
                           <div class="input-group-prepend">
                               <span class="input-group-text" id="basic-addon1">@</span>
                           </div>
-                          <input type="email" name="email" class="form-control py-0" placeholder="youremail@example.com" aria-describedby="basic-addon1">
+                          <input type="email" name="email" value="{{old('email')}}" class="form-control py-0" placeholder="youremail@example.com" aria-describedby="basic-addon1">
                       </div>
                       @if($errors->has('email'))
                           <div class="error">{{ $errors->first('email') }}</div>
@@ -131,7 +164,7 @@
                   <div class="col-md-6 mb-2">
                       <div class="md-form mb-3">
                           <label for="phone" class="label1">@lang('front.phone')</label>
-                          <input type="text" name="phone" id="phone" class="form-control" placeholder="phone Number">
+                          <input type="text" name="phone"  value="{{old('phone')}}"  id="phone" class="form-control" placeholder="phone Number">
                           @if($errors->has('phone'))
                               <div class="error">{{ $errors->first('phone') }}</div>
                           @endif
@@ -141,7 +174,7 @@
               <!--Grid row-->
               <div class="md-form mb-3">
                   <label for="address" class="label3">@lang('front.address')</label>
-                  <input type="text" id="address" name="address[]" class="form-control" placeholder="1234 Main St">
+                  <input type="text" id="address" name="address[]" value="{{old('address.0')}}" class="form-control" placeholder="1234 Main St">
                   @if($errors->has('address'))
                       <div class="error">{{ $errors->first('address') }}</div>
                   @endif
@@ -150,7 +183,7 @@
               <!--address-2-->
               <div class="md-form mb-3">
                   <label for="address-2" name="address[]"  class="label4">@lang('front.address-2')</label>
-                  <input type="text" name="address[]" id="address-2" class="form-control" placeholder="Apartment or suite">
+                  <input type="text" name="address[]" id="address-2" value="{{old('address.1')}}" class="form-control" placeholder="Apartment or suite">
                   @if($errors->has('address'))
                       <div class="error">{{ $errors->first('address') }}</div>
                   @endif
@@ -160,7 +193,7 @@
                 <!--Grid column-->
                 <div class="col-lg-4 col-md-12 mb-4">
                   <label for="country" class="label6">@lang('front.country')</label>
-                    <input type="text" id="country" name="country" class="form-control " placeholder="Enter Your Country">
+                    <input type="text" id="country" name="country" value="{{old('country')}}" class="form-control " placeholder="Enter Your Country">
                     @if($errors->has('country'))
                         <div class="error">{{ $errors->first('country') }}</div>
                     @endif
@@ -169,7 +202,7 @@
                 <!--Grid column-->
                 <div class="col-lg-4 col-md-6 mb-4">
                   <label for="state" class="label6">@lang('front.state')</label>
-                    <input type="text" id="state" name="state" class="form-control" placeholder="Enter Your state">
+                    <input type="text" id="state" name="state" value="{{old('state')}}" class="form-control" placeholder="Enter Your state">
                     @if($errors->has('state'))
                         <div class="error">{{ $errors->first('state') }}</div>
                     @endif
@@ -180,7 +213,7 @@
                 <div class="col-lg-4 col-md-6 mb-4">
 
                   <label for="zip" class="label5">@lang('front.zip')</label>
-                  <input type="text" class="form-control" name="zip" id="zip" placeholder="ZIP Code" required>
+                  <input type="text" class="form-control"  value="{{old('zip')}}" name="zip" id="zip" placeholder="ZIP Code" required>
                     @if($errors->has('zip'))
                         <div class="error">{{ $errors->first('zip') }}</div>
                     @endif
@@ -247,13 +280,12 @@
 
         <!--Grid column-->
         <div class="col-md-4 mb-4">
-
-          <!-- Heading -->
-          <h4 class="d-flex justify-content-between align-items-center mb-3">
-            <span class="text-muted">Your cart</span>
-            <span class="badge badge-secondary badge-pill">3</span>
-          </h4>
         @if(!empty(session()->get('cart')->items ))
+            <!-- Heading -->
+            <h4 class="d-flex justify-content-between align-items-center mb-3">
+                <span class="text-muted">Your cart</span>
+                <span class="badge badge-secondary badge-pill">{{ session()->get('cart')->totalQuantity }}</span>
+            </h4>
           <!-- Cart -->
           <ul class="list-group mb-3 z-depth-1">
               @foreach(session()->get('cart')->items as $item)

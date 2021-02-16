@@ -35,18 +35,18 @@ trait PaypalTrait
 
     protected function paypalPayment($request)
     {
-//        $products=[];
-//
-//        foreach ( session()->get('cart')->items as $items){
-//            array_push($products, $items["item"]->title);
-//        }
+        $products=[];
+
+        foreach ( session()->get('cart')->items as $items){
+            array_push($products, $items["item"]->title);
+        }
 
         $payer = new Payer();
         $payer->setPaymentMethod('paypal');
 
         $item_1 = new Item();
 
-        $item_1->setName("Ostora Order")
+        $item_1->setName(implode(',' , $products))
             ->setCurrency('USD')
             ->setQuantity(1)
             ->setPrice($request->get('amount') * env('USD_Average_Price'));
@@ -75,6 +75,7 @@ trait PaypalTrait
 
         try{
             $payment->create($this->_api_context);
+
         } catch (\PayPal\Exception\PPConnectionException $ex) {
             if (\Config::get('app.debug')) {
                 \Session::put('error','Connection timeout');
@@ -84,7 +85,6 @@ trait PaypalTrait
                 return redirect()->route('front.checkout');
             }
         }
-
 
         foreach($payment->getLinks() as $link) {
             if($link->getRel() == 'approval_url') {
@@ -97,12 +97,15 @@ trait PaypalTrait
         Session::put('paypal_payment_id', $payment->getId());
 
         if(isset($redirect_url)) {
-            return redirect()->away($redirect_url);
-           // return Redirect::away($redirect_url);
+
+           // return redirect()->away($redirect_url);
+            return $redirect_url;
+        }else{
+
+            \Session::put('error','Unknown error occurred');
+            return redirect()->route('front.checkout');
         }
-dd($redirect_url);
-       // \Session::put('error','Unknown error occurred');
-        return redirect()->route('front.checkout');
+
     }
 
     public function paypalStatus($request)
@@ -110,21 +113,22 @@ dd($redirect_url);
         $payment_id = Session::get('paypal_payment_id');
 
         Session::forget('paypal_payment_id');
-        if (empty($request->input('PayerID')) || empty($request->input('token'))) {
-            \Session::put('error','Payment failed');
-            return redirect()->route('front.checkout');
+
+        if (empty($request->input('PayerID')) || empty($request->input('token')))
+        {
+            return redirect(route('front.homepage'))->with('error',__('front.order-fail'));
         }
         $payment = Payment::get($payment_id, $this->_api_context);
         $execution = new PaymentExecution();
         $execution->setPayerId($request->input('PayerID'));
         $result = $payment->execute($execution, $this->_api_context);
 
-        if ($result->getState() == 'approved') {
-            \Session::put('success','Payment success !!');
-            return redirect()->route('front.checkout');
-        }
+        if ($result->getState() == 'approved')
+        {
+            $request->session()->forget('cart');
 
-        \Session::put('error','Payment failed !!');
-        return redirect()->route('front.checkout');
+            return redirect(route('front.homepage'))->with('success',__("front.order-done"));
+        }
+        return redirect(route('front.homepage'))->with('error',__('front.order-fail'));
     }
 }

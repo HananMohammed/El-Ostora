@@ -579,6 +579,7 @@ class Payment extends PayPalResourceModel
         );
 
         $this->fromJson($json);
+
         return $this;
     }
 

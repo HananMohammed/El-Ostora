@@ -16,13 +16,22 @@ class PaymentController extends Controller implements PaymentInterface
         if (!empty($request->all()))
         {
             $this->saveOrders($request, $model);
+
             //Cache on Delivery Payment
+            if ($request["payment-method"] == 1 || $request["payment-method"] == 2)
+            {
+                $request->session()->forget('cart');
+
+                return redirect(route('front.homepage'))->with("success", __('front.order-done'));
+            }
+
             if ($request["payment-method"] == 3)
             {
-                $this->paypalPayment($request);
+                $redirect_url = $this->paypalPayment($request);
+
+                 return redirect()->away($redirect_url) ;
             }
-            $request->session()->forget('cart');
-            return redirect(route('front.homepage'))->with("success", __('front.order-done'));
+
         }
     }
 

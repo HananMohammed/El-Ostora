@@ -185,7 +185,8 @@ New from legend for the winter season in more than one color",
     consequatur saepe blanditiis.Lorem ipsum dolor sit amet,Ea consequuntur illum facere aperiam
     sequi optio consectetur adipisicing elit. Fuga, suscipit totam animi consequatur saepe
     blanditiis.",
-    "order-done" =>"Order Done , and will be delivered from 3 to 5 working days"
+    "order-done" =>"Order Done , and will be delivered from 3 to 5 working days",
+    "order-fail" => "Something Wrong HAppend, and Payment Fail Please Try Again"
 
 
 
