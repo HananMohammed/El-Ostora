@@ -74,9 +74,9 @@
                                                 <td>{{ $order->phone }}</td>
                                                 <td>
                                                     <ol>
-                                                    @foreach(json_decode( $order->address) as $address)
-                                                       <li>{{$address}}</li>
-                                                    @endforeach
+                                                        @foreach(json_decode( $order->address) as $address)
+                                                            <li>{{$address}}</li>
+                                                        @endforeach
                                                     </ol>
                                                 </td>
                                                 <td>{{ $order->country }}</td>

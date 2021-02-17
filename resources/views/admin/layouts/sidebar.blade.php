@@ -64,13 +64,13 @@
                     <div class="menu-submenu">
                         <i class="menu-arrow"></i>
                         <ul class="menu-subnav">
-                        <li class="menu-item menu-item-parent" aria-haspopup="true">
+                            <li class="menu-item menu-item-parent" aria-haspopup="true">
                             <span class="menu-link">
                                 <span class="menu-text">@lang('admin.homepage')</span>
                             </span>
-                        </li>
-                        <!--Start Slider-->
-                        <li class="menu-item menu-item-submenu" aria-haspopup="true" data-menu-toggle="hover">
+                            </li>
+                            <!--Start Slider-->
+                            <li class="menu-item menu-item-submenu" aria-haspopup="true" data-menu-toggle="hover">
                                 <a href="javascript:;" class="menu-link menu-toggle">
                                     <i class="menu-bullet menu-bullet-line">
                                         <span></span>
@@ -100,18 +100,18 @@
                                     </ul>
                                 </div>
                             </li>
-                        <!--End Slider-->
-                        <!--About Us-->
-                        <li class="menu-item" aria-haspopup="true">
-                            <a href="{{route('admin.about.edit')}}" class="menu-link">
-                                <i class="menu-bullet menu-bullet-line">
-                                    <span></span>
-                                </i>
-                                <span class="menu-text">@lang('admin.about')</span>
-                            </a>
-                        </li>
-                        <!--End About Us-->
-                        <!--Mens Offers-->
+                            <!--End Slider-->
+                            <!--About Us-->
+                            <li class="menu-item" aria-haspopup="true">
+                                <a href="{{route('admin.about.edit')}}" class="menu-link">
+                                    <i class="menu-bullet menu-bullet-line">
+                                        <span></span>
+                                    </i>
+                                    <span class="menu-text">@lang('admin.about')</span>
+                                </a>
+                            </li>
+                            <!--End About Us-->
+                            <!--Mens Offers-->
                             <li class="menu-item menu-item-submenu" aria-haspopup="true" data-menu-toggle="hover">
                                 <a href="{{route('admin.mens.offer.edit')}}" class="menu-link menu-toggle">
                                     <i class="menu-bullet menu-bullet-line">
@@ -120,7 +120,7 @@
                                     <span class="menu-text">@lang('admin.mens-offers')</span>
                                 </a>
                             </li>
-                        <!--Women Offer-->
+                            <!--Women Offer-->
                             <li class="menu-item menu-item-submenu" aria-haspopup="true" data-menu-toggle="hover">
                                 <a href="{{route('admin.women.offer.edit')}}" class="menu-link menu-toggle">
                                     <i class="menu-bullet menu-bullet-line">
@@ -129,7 +129,7 @@
                                     <span class="menu-text">@lang('admin.women-offers')</span>
                                 </a>
                             </li>
-                        <!--Start Blogs-->
+                            <!--Start Blogs-->
                             <li class="menu-item menu-item-submenu" aria-haspopup="true" data-menu-toggle="hover">
                                 <a href="{{route('admin.blogs.index')}}" class="menu-link menu-toggle">
                                     <i class="menu-bullet menu-bullet-line">
@@ -270,7 +270,7 @@
                         <span class="menu-text">@lang('admin.contacts')</span>
                     </a>
                     <!--End Contacts-->
-                <!--NewsLetter-->
+                    <!--NewsLetter-->
                 <li class="menu-item" aria-haspopup="true">
                     <a href="{{ route('admin.NewsLetter') }}" class="menu-link">
                         <span class="svg-icon menu-icon">
@@ -289,7 +289,7 @@
 
                 </li>
                 <!-- Customer Orders -->
-               <li class="menu-item" aria-haspopup="true">
+                <li class="menu-item" aria-haspopup="true">
                     <a href="{{ route('admin.customerOrders') }}" class="menu-link">
                         <span class="svg-icon menu-icon">
                             <!--begin::Svg Icon | path:assets/media/svg/icons/Home/Library.svg-->
@@ -307,7 +307,7 @@
 
                 </li>
 
-            <!--logout-->
+                <!--logout-->
                 <li class="menu-item" aria-haspopup="true">
                     <a target="_blank" href="#" class="menu-link"
                        onclick="event.preventDefault();

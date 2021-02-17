@@ -12,7 +12,7 @@ class CustomerOrdersController extends Controller
     {
         $orders = Payment::orderBy("id","DESC")->get();
 
-         return view('admin.customer-orders.index', compact('orders'));
+        return view('admin.customer-orders.index', compact('orders'));
     }
 
     /**

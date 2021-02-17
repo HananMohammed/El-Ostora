@@ -29,7 +29,7 @@
             <div class="container py-lg-5">
                 <div class="row story-6-grids text-left">
                     <div class="col-lg-5 story-gd">
-                        <img src="{{asset_public('front/assets/images/excited.png')}}" class="img-fluid" alt="/"@if(app()->getLocale() == 'ar') style="max-width: 110% !important; position: relative;top: 27px;height: 550px;left: 60px;" @else style="top: -10px;height: 600px;left: -60px;" @endif>
+                        <img src="{{asset_public('front/assets/images/excited.png')}}" class="img-fluid" alt="/" style="max-width: 110% !important; position: relative;top: 27px;height: 550px;left: 60px;">
                     </div>
                     <div class="col-lg-7 story-gd pl-lg-4">
                         <h3 class="hny-title">@lang('front.what-we')<span>@lang('front.offer')</span></h3>
