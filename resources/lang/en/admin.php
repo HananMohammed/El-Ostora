@@ -101,7 +101,18 @@ return [
     "edit-category" => "Edit Category",
     "select-category" => "Select Category",
     "blogs" => "Blogs",
-    "followed-at" => "Followed.At"
+    "followed-at" => "Followed.At",
+    "customer-orders" => "Customer Orders",
+    "first-name" => "First Name",
+    "last-name" => "Last Name",
+    "address" =>"Address",
+    "phone" =>"Phone",
+    "country" => "Country",
+    "state" =>"State"
+
+
+
+
 
 
 

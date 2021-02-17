@@ -26,3 +26,5 @@ Route::get('mens-offer/edit','MensOfferController@edit' )->name('mens.offer.edit
 Route::post('mens-offer/update','MensOfferController@update' )->name('mens.offer.update');
 Route::get('women-offer/edit','WomenOfferController@edit' )->name('women.offer.edit');
 Route::post('women-offer/update','WomenOfferController@update' )->name('women.offer.update');
+Route::get('/customer-orders',"CustomerOrdersController@index")->name('customerOrders');
+Route::delete('/customer-orders/{id}', "CustomerOrdersController@destroy")->name('customerOrders.delete');

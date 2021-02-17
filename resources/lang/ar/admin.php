@@ -94,7 +94,16 @@ return [
     "women-offer-edit" => "تعديل عروض النساء",
     "edit-category" => "تعديل الاقسام ",
     "select-category" => "تحديد القسم",
-    "followed-at" => "تاريخ المتابعه"
+    "followed-at" => "تاريخ المتابعه",
+    "customer-orders" => "طلبات العملاء",
+    "first-name" => "الاسم الاول",
+    "last-name" => "الاسم الاخير",
+    "address" =>"العنوان",
+    "phone" =>"الهاتف",
+    "country" => "المحافظه",
+    "state" =>"State"
+
+
 
 
 

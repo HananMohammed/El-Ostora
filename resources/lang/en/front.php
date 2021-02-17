@@ -186,7 +186,19 @@ New from legend for the winter season in more than one color",
     sequi optio consectetur adipisicing elit. Fuga, suscipit totam animi consequatur saepe
     blanditiis.",
     "order-done" =>"Order Done , and will be delivered from 3 to 5 working days",
-    "order-fail" => "Something Wrong HAppend, and Payment Fail Please Try Again"
+    "order-fail" => "Something Wrong HAppend, and Payment Fail Please Try Again",
+    "ostora-for-industry" => "Ostoura for Industry Group annually presents an exceptional season different from its predecessor in the seasons, through which it achieves impressive success that is always distinguished by its unique identity and sophisticated style in choosing and shaping its models with the latest international designs with an Arab identity represented in the presentation of more than 250 models annually, including what is women's clothing (casual - abayas) - Tonic), through which it was able to achieve progressive sales rates, planning a barrier of 93%, and that percentage is on the rise.",
+    "visit-store" => "Ostora for the industry is distinguished by its dependence on advanced modern technology through its owning of a specialized embroidery factory equipped with the latest embroidery technology with international standards and quality",
+    "Visit-Factory" =>"01. Visit Factory",
+    "company-offer" => "The company relies on integrated production and manufacturing lines with advanced manufacturing technology according to international standards of quality by owning more than 200 machines in all departments of weaving, cutting, embroidery, printing, laundries and chemical treatment. The company also depends on administrative and technical staff and trained workers for more than 230 employees",
+    "Ostora-vision" => "02. Ostora Vision",
+    "Ostora-mission" => "03. Ostora Mission",
+    "Ostora-unique" => "04. Unique shop",
+    "Ostora-unique-text" => "Myth and reality, not a fantasy, where leadership does not come out of nowhere. We are unique and we have a long history in the manufacture of abaya and tunics, where the good fabrics and modern materials are of high quality",
+    "company-needs" =>"The company can cover all the needs of the market locally and we look forward to be the best in the Middle East and the Arab world and cover all the needs of the market locally and abroad. The company aims to satisfy the taste of the final consumer of the product by providing different designs and upgrading the level of industry and the application of state policies to improve the local industry"
+
+
+
 
 
 

@@ -29,38 +29,31 @@
             <div class="container py-lg-5">
                 <div class="row story-6-grids text-left">
                     <div class="col-lg-5 story-gd">
-                        <img src="{{asset_public('front/assets/images/left2.jpg')}}" class="img-fluid" alt="/">
+                        <img src="{{asset_public('front/assets/images/excited.png')}}" class="img-fluid" alt="/"@if(app()->getLocale() == 'ar') style="max-width: 110% !important; position: relative;top: 27px;height: 550px;left: 60px;" @else style="top: -10px;height: 600px;left: -60px;" @endif>
                     </div>
                     <div class="col-lg-7 story-gd pl-lg-4">
                         <h3 class="hny-title">@lang('front.what-we')<span>@lang('front.offer')</span></h3>
-                        <p>Lorem illum facere aperiam sequi optio consectetur adipisicing elitFuga, suscipit totam animi
-                            consequatur saepe blanditiis.Lorem ipsum dolor sit amet,Ea consequuntur illum facere aperiam
-                            sequi optio consectetur adipisicing elit. Fuga, suscipit totam animi consequatur saepe
-                            blanditiis.</p>
+                        <p>@lang('front.ostora-for-industry')</p>
 
                         <div class="row story-info-content mt-md-5 mt-4">
 
                             <div class="col-md-6 story-info">
-                                <h5> <a href="#">01. Visit Store</a></h5>
-                                <p>Lorem illum facere aperiam sequi optio consectetur adipisicing elitFuga, suscipit totam animi
-                                    consequatur.</p>
+                                <h5> <a href="javascript:void(0)">@lang('front.Visit-Factory')</a></h5>
+                                <p>@lang('front.visit-store')</p>
 
 
                             </div>
                             <div class="col-md-6 story-info">
-                                <h5> <a href="#">02. Add To Cart</a></h5>
-                                <p>Lorem illum facere aperiam sequi optio consectetur adipisicing elitFuga, suscipit totam animi
-                                    consequatur.</p>
+                                <h5> <a href="javascript:void(0)">@lang('front.Ostora-vision')</a></h5>
+                                <p>@lang('front.company-offer')</p>
                             </div>
                             <div class="col-md-6 story-info">
-                                <h5> <a href="#">03. Gift Cards</a></h5>
-                                <p>Lorem illum facere aperiam sequi optio consectetur adipisicing elitFuga, suscipit totam animi
-                                    consequatur.</p>
+                                <h5> <a href="javascript:void(0)">@lang('front.Ostora-mission')</a></h5>
+                                <p>@lang('front.company-needs')</p>
                             </div>
                             <div class="col-md-6 story-info">
-                                <h5> <a href="#">04. Unique shop</a></h5>
-                                <p>Lorem illum facere aperiam sequi optio consectetur adipisicing elitFuga, suscipit totam animi
-                                    consequatur.</p>
+                                <h5> <a href="javascript:void(0)">@lang('front.Ostora-unique')</a></h5>
+                                <p>@lang('front.Ostora-unique-text')</p>
                             </div>
                         </div>
 
@@ -188,7 +181,7 @@
                     Meet the  <span>Team</span></h3>
                 <div class="row team-row mt-5">
                     <div class="col-lg-4 col-sm-6 mb-lg-0 mb-4 team-wrapper position-relative">
-                        <a href="#"><img src="assets/images/team1.jpg" class="team_member img-fluid" alt="Team Member"></a>
+                        <a href="#"><img src="{{asset_public('front/assets/images/team1.jpg')}}" class="team_member img-fluid" alt="Team Member"></a>
                         <div class="team_info mt-3 position-absolute">
                             <h3><a href="#" class="team_name">Suzan Lois</a></h3>
                             <span class="team_role">Founder & CEO</span>
@@ -203,7 +196,7 @@
                     <!-- end team member -->
 
                     <div class="col-lg-4 col-sm-6 mb-lg-0 mb-4 team-wrapper position-relative">
-                        <a href="#"><img src="assets/images/team2.jpg" class="team_member img-fluid" alt="Team Member"></a>
+                        <a href="#"><img src="{{asset_public('front/assets/images/team2.jpg')}}" class="team_member img-fluid" alt="Team Member"></a>
                         <div class="team_info mt-3 position-absolute">
                             <h3><a href="#" class="team_name">Suzan Kin</a></h3>
                             <span class="team_role">Designer</span>
@@ -217,7 +210,7 @@
                     </div>
                     <!-- end team member -->
                     <div class="col-lg-4 col-sm-6 team-wrapper position-relative">
-                        <a href="#"><img src="assets/images/team3.jpg" class="team_member img-fluid" alt="Team Member"></a>
+                        <a href="#"><img src="{{asset_public('front/assets/images/team3.jpg')}}" class="team_member img-fluid" alt="Team Member"></a>
                         <div class="team_info mt-3 position-absolute">
                             <h3><a href="#" class="team_name">Kin Lois</a></h3>
                             <span class="team_role">Marketing</span>

@@ -9,13 +9,13 @@
                     <p>@lang('front.loreom')</p>
                     <ul class="social-footerhny mt-lg-5 mt-4">
 
-                        <li><a class="facebook" target="_blank" href="https://www.facebook.com/Ostora-1520814358225033/?fref=ts"><span class="" aria-hidden="true"><i class="fab fa-facebook-f"></i></span></a>
+                        <li><a class="facebook" target="_blank" href="https://www.facebook.com/OstoraFashion97/"><span class="" aria-hidden="true"><i class="fab fa-facebook-f"></i></span></a>
                         </li>
-                        <li><a class="twitter"  target="_blank" href="http://www.twitter.com"><span class="" aria-hidden="true"><i class="fab fa-twitter"></i></span></a>
+                        <li><a class="twitter"  target="_blank" href="https://twitter.com/OstoraFashion"><span class="" aria-hidden="true"><i class="fab fa-twitter"></i></span></a>
                         </li>
                         <li><a class="google" href="http://www.google.com"><span class="" aria-hidden="true"><i class="fab fa-google-plus-g"></i></span></a>
                         </li>
-                        <li><a class="instagram" href="http://www.instgram.com"><span class="" aria-hidden="true"><i class="fab fa-instagram"></i></span></a>
+                        <li><a class="instagram" href="https://www.instagram.com/ostora97/"><span class="" aria-hidden="true"><i class="fab fa-instagram"></i></span></a>
                         </li>
                     </ul>
                 </div>
