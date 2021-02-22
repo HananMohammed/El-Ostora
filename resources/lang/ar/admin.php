@@ -101,7 +101,9 @@ return [
     "address" =>"العنوان",
     "phone" =>"الهاتف",
     "country" => "المحافظه",
-    "state" =>"State"
+    "state" =>"State",
+    "galleries" => "معرض الصور"
+
 
 
 

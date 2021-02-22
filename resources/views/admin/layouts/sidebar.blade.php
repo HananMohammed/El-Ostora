@@ -103,6 +103,16 @@
                             <!--End Slider-->
                             <!--About Us-->
                             <li class="menu-item" aria-haspopup="true">
+                                <a href="{{route('admin.galleries.index')}}" class="menu-link">
+                                    <i class="menu-bullet menu-bullet-line">
+                                        <span></span>
+                                    </i>
+                                    <span class="menu-text">@lang('admin.galleries')</span>
+                                </a>
+                            </li>
+                            <!--End About Us-->
+                            <!--Start Gallery-->
+                            <li class="menu-item" aria-haspopup="true">
                                 <a href="{{route('admin.about.edit')}}" class="menu-link">
                                     <i class="menu-bullet menu-bullet-line">
                                         <span></span>
@@ -110,7 +120,7 @@
                                     <span class="menu-text">@lang('admin.about')</span>
                                 </a>
                             </li>
-                            <!--End About Us-->
+                            <!--End Gallery-->
                             <!--Mens Offers-->
                             <li class="menu-item menu-item-submenu" aria-haspopup="true" data-menu-toggle="hover">
                                 <a href="{{route('admin.mens.offer.edit')}}" class="menu-link menu-toggle">

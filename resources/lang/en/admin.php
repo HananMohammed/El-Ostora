@@ -108,7 +108,8 @@ return [
     "address" =>"Address",
     "phone" =>"Phone",
     "country" => "Country",
-    "state" =>"State"
+    "state" =>"State",
+    "galleries" => "Galleries"
 
 
 

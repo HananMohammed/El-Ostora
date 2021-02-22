@@ -18,6 +18,7 @@ Route::resource('sliders', 'SliderController');
 Route::resource('categories', 'CategoryController');
 Route::resource('products', 'ProductController');
 Route::resource('blogs', 'BlogController');
+Route::resource('galleries', 'GallaryController');
 Route::get('/contacts', 'ContactController@index')->name('contacts');
 Route::get('/news-letter', 'NewsLetterController@index')->name('NewsLetter');
 Route::get('abouts/edit','AboutController@edit' )->name('about.edit');

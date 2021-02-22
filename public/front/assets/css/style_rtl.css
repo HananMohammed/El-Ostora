@@ -21,7 +21,7 @@ a, p, h3, h4, span{
 }
 .w3l-banner-slider-main .carousel-caption h3 {
     position: relative;
-    left: 55%;
+    left: 0;
     top: -10px;
 }
 .w3l-banner-slider-main a.shop-button.btn {
@@ -64,4 +64,7 @@ p,
 a,
 li{
     text-align: right;
+}
+.w3l-grids-hny-2 .boxhny13 .title:hover {
+    text-align: center!important;
 }

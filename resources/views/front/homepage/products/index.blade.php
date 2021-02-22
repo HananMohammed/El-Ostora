@@ -44,6 +44,9 @@
     </div>
 </section>
 <!-- //products-->
+<section class="w3l-ecommerce-main">
+@include('front.homepage.gallary.index')
+</section>
 <section class="w3l-content-5">
     <!-- /content-6-section -->
     <div class="content-5-main">

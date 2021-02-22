@@ -18,7 +18,7 @@ class NewsLetterController extends Controller
 
         $model->create($request->all());
 
-        return back()->with('success' , 'Course Saved Successfully') ;
+        return back() ;
 
     }
 }

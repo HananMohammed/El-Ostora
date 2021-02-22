@@ -10,6 +10,7 @@ use App\Models\Admin\Blog;
 use App\Models\Admin\Category;
 use App\Models\Admin\Course;
 use App\Models\Admin\Department;
+use App\Models\Admin\Gallary;
 use App\Models\Admin\HowWork;
 use App\Models\Admin\MensOffer;
 use App\Models\Admin\News;
@@ -34,6 +35,7 @@ class ViewData
         $womenOffer = WomenOffer::all();
         $products = Product::orderBy('id', 'desc')->take(8)->get();
         $blogs = Blog::orderBy('id', 'desc')->take(4)->get();
+        $gallery = Gallary::all();
         $data = [
             "slider" => $slider,
             "about" => $about,
@@ -42,7 +44,8 @@ class ViewData
             "mens-offer" => $mensOffer,
             "women-offer" => $womenOffer,
             "products" => $products,
-            "blogs" => $blogs
+            "blogs" => $blogs,
+            "gallery" => $gallery,
          ];
         return $data ;
     }

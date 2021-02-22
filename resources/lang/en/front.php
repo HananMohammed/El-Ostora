@@ -195,7 +195,9 @@ New from legend for the winter season in more than one color",
     "Ostora-mission" => "03. Ostora Mission",
     "Ostora-unique" => "04. Unique shop",
     "Ostora-unique-text" => "Myth and reality, not a fantasy, where leadership does not come out of nowhere. We are unique and we have a long history in the manufacture of abaya and tunics, where the good fabrics and modern materials are of high quality",
-    "company-needs" =>"The company can cover all the needs of the market locally and we look forward to be the best in the Middle East and the Arab world and cover all the needs of the market locally and abroad. The company aims to satisfy the taste of the final consumer of the product by providing different designs and upgrading the level of industry and the application of state policies to improve the local industry"
+    "company-needs" =>"The company can cover all the needs of the market locally and we look forward to be the best in the Middle East and the Arab world and cover all the needs of the market locally and abroad. The company aims to satisfy the taste of the final consumer of the product by providing different designs and upgrading the level of industry and the application of state policies to improve the local industry",
+    "gallery" => "Photo Gallery",
+
 
 
 
